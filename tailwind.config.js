@@ -13,7 +13,7 @@ module.exports = {
           DEFAULT: colors.stone['900'] ,
         },
         secondary: {...colors.gray,
-          dark: colors.gray['300'] ,
+          dark: colors.gray['400'] ,
           DEFAULT: '#FFF' ,
         },
         accent: {
