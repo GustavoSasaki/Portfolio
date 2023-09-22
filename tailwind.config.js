@@ -13,7 +13,8 @@ module.exports = {
           DEFAULT: colors.stone['900'] ,
         },
         secondary: {...colors.gray,
-          dark: colors.gray['400'] ,
+          darker: colors.gray['400'] ,
+          dark: colors.gray['300'] ,
           DEFAULT: '#FFF' ,
         },
         accent: {
