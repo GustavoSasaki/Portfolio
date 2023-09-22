@@ -28,7 +28,7 @@ export default function Home() {
           <MainStack />
           <About />
         </div>
-
+        <div>tecj</div>
 
       </main>
 

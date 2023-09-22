@@ -16,8 +16,8 @@ export function Hero() {
                     <div className="text-4xl  font-bold">
                         <h1 className="inline">Gustavo </h1><span>|</span>
                         <br />
-                        <Underline>
-                            <p className="text-4xl">Web Developer</p>
+                        <Underline variant="big">
+                            <p>Web Developer</p>
                         </Underline>
                     </div>
                 </div>

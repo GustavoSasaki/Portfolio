@@ -18,6 +18,7 @@ module.exports = {
           DEFAULT: '#FFF' ,
         },
         accent: {
+          200: '#8cedb1',
           400: '#3BBA6C',
           DEFAULT: '#319B5A',
           600: '#277C48'
@@ -26,6 +27,8 @@ module.exports = {
 
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 
