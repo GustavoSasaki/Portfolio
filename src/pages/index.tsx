@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import { Footer } from '@/components/Footer/Footer'
 import { Hero } from '@/components/Hero/Hero'
 import { About } from '@/components/About/About'
-import { negativeMargin, MainStack } from '@/components/Hero/MainStack/MainStack'
+import { MainStack } from '@/components/Hero/MainStack/MainStack'
 import { Technologies } from '@/components/Technologies/Technologies'
 import { Projects } from '@/components/Projects/Projects'
 import { NavBar } from '@/components/NavBar/NavBar'
@@ -14,8 +14,12 @@ import { NavBar } from '@/components/NavBar/NavBar'
 //fac icon
 //head meta dados
 //fazer gustavo sasaki com ki verde
-//fix overlay de main stack
 //add transion in animation
+// use next img
+//use better photo
+//put on vercel
+//put on git
+//buy a webite url
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,9 +32,8 @@ export default function Home() {
 
       <main className=" grow ">
         <div className="bg-primary-light">
-          <div className={`bg-primary`}>
+          <div className="bg-primary pb-24">
             <Hero />
-            <div className={` h-[${negativeMargin}]`} />
           </div>
 
           <MainStack />

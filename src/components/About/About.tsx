@@ -2,7 +2,7 @@ import { Underline } from "../Underline";
 
 export function About() {
     return (
-        <section className="container pt-[10rem] bg-primary-light pb-8">
+        <section className="container pt-14 bg-primary-light pb-8">
             <div className="ml-4">
                 <Underline variant="small"><h1>About</h1></Underline>
             </div>
