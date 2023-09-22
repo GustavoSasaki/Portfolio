@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer/Footer'
 import { Hero } from '@/components/Hero/Hero'
 import { About } from '@/components/About/About'
 import { negativeMargin, MainStack } from '@/components/Hero/MainStack/MainStack'
+import { Technologies } from '@/components/Technologies/Technologies'
 
 
 //to-do fix triangle not in center in go home button footer
@@ -28,7 +29,7 @@ export default function Home() {
           <MainStack />
           <About />
         </div>
-        <div>tecj</div>
+        <Technologies />
 
       </main>
 
