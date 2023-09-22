@@ -17,9 +17,11 @@ import { NavBar } from '@/components/NavBar/NavBar'
 //add transion in animation
 // use next img
 //use better photo
-//put on vercel
-//put on git
 //buy a webite url
+//make form :<
+//make pc version
+//make mobile menu
+//make pc menu
 
 const inter = Inter({ subsets: ['latin'] })
 
