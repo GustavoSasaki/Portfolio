@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/Footer/Footer'
-import { Contact } from '@/components/Contact/Contact'
 import { Hero } from '@/components/Hero/Hero'
+import { About } from '@/components/About/About'
+import { negativeMargin, MainStack } from '@/components/Hero/MainStack/MainStack'
 
 
 //to-do fix triangle not in center in go home button footer
@@ -18,12 +18,20 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className=" grow">
-        <Hero />
+      <main className=" grow ">
+        <div className="bg-primary-light">
+          <div className={`bg-primary`}>
+            <Hero />
+            <div className={` h-[${negativeMargin}]`} />
+          </div>
+
+          <MainStack />
+          <About />
+        </div>
 
 
       </main>
-      
+
       <Footer />
     </div>
   )

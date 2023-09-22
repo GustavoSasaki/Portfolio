@@ -7,11 +7,11 @@ import { ResumeButton } from "../SocialMediaButton/ResumeButton";
 
 export function Hero() {
     return (
-        <section className="container pt-[7.75rem]"
+        <section className="container pt-[7.75rem] pb-20"
         style={{backgroundImage: "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg}}
         >
-            <div id="hero-title" className="mx-4">
-                <div>
+            <div className="mx-4">
+                <div id="hero-title">
                     <p className="text-secondary-dark text-sm pl-1">Hello, my name is</p>
                     <div className="text-4xl  font-bold">
                         <h1 className="inline">Gustavo </h1><span>|</span>
@@ -22,7 +22,7 @@ export function Hero() {
                     </div>
                 </div>
 
-                <div id="hero-social-links" className="flex justify-start mt-8">
+                <div id="hero-social-links" className="flex justify-start mt-9">
                     <SocialMediaButton href={linkedinUrl} title="LinkedIn">
                         <LinkedInIcon className="h-[39px] w-[39px] text-secondary" />
                     </SocialMediaButton>
@@ -34,10 +34,11 @@ export function Hero() {
                     <ResumeButton variant={"hero"} />
                 </div>
 
-                <p className="text-secondary-dark mt-4">
+                <p className="text-secondary-dark mt-3">
                     {description}
                 </p>
             </div>
+
         </section>
     )
 }

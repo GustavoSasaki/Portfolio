@@ -1,8 +1,9 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import { ResumeButton } from './ResumeButton';
-import { SocialMediaButton } from './SocialMediaButton';
+import { ResumeButton } from '../SocialMediaButton/ResumeButton';
+import { SocialMediaButton } from '../SocialMediaButton/SocialMediaButton';
+import { linkedinUrl, githubUrl } from '../SocialMediaButton/SocialMediaUrl';
 
 export function Footer() {
     return (
@@ -23,16 +24,13 @@ export function Footer() {
                 </SocialMediaButton>
 
 
-                <ResumeButton />
+                <ResumeButton variant={'footer'} />
 
             </div>
 
-            <p className="text-secondary-dark font-medium text-sm mt-2">
+            <p className="text-secondary-darker font-medium text-sm mt-2">
                 © 2023 | Design and build by Gustavo Roncaglia
             </p>
         </footer>
     )
 }
-
-const linkedinUrl = "https://www.linkedin.com/in/gustavosasaki/"
-const githubUrl = "https://github.com/GustavoSasaki/"
