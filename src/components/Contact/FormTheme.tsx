@@ -24,10 +24,10 @@ export const muiTheme = createTheme({
                         fontWeight:'500',
                     },
                     '.MuiInputBase-root:after':{
-                        borderBottomWidth:'4px',
+                        borderBottomWidth:'5px',
                     },
                     '.MuiInputBase-multiline:after':{
-                        borderBottomWidth:'5px',
+                        borderBottomWidth:'6px',
                     },
                     '.MuiInputBase-root:not(.Mui-error):after':{
                         borderBottomColor: tailwind.theme.extend.colors['secondary']['darker']

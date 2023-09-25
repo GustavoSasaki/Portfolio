@@ -16,7 +16,7 @@ export const Contact = forwardRef((props, ref) => {
         <section ref={ref as RefObject<HTMLDivElement>}  className="gu-container pb-10">
             <Underline variant={"small"}><h6>Contact Me</h6></Underline>
 
-            <p className="text-sm pt-1 pb-4">
+            <p className="text-sm sm:text-base pt-1 pb-4">
                 Have any question?
                 Interested in hiring?
                 <br />

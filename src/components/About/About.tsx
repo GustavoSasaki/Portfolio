@@ -17,7 +17,7 @@ export const About = forwardRef((props, ref) => {
             </div>
 
 
-            <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent">
+            <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg">
                 <p>
                     As a developer, I am interested in the creation of websites as a whole.
                     From design, front-end to back-end.

@@ -20,10 +20,18 @@ export interface Project {
 }
 
 
-export function ProjectBox({ img, title, description, stack, internalUrl, externalUrl, projectLinks }: Project) {
+export function ProjectBox({ img, title, description, stack, internalUrl, externalUrl, projectLinks, index }: Project & { index: number }) {
+    const isEven = index % 2 == 0
+    const gridTemplateAreas = isEven
+    ? `"img title" "img tech" "img description" "img buttom"`
+    : `"title img" "tech img" "description img" "buttom img"`
+
     return (
-        <article>
-            <a href={externalUrl} target="_blank" className="overflow-hidden w-72 h-72 block mx-auto rounded-lg relative group">
+        <article className="sm:grid sm:gap-x-4 mb-12"
+            style={{ gridTemplateAreas }}
+        >
+
+            <a href={externalUrl} target="_blank" className="overflow-hidden w-72 h-72 block mx-auto rounded-lg relative group [grid-area:_img] mb-3">
                 <div className="absolute opacity-0 bg-accent-600 group-hover:opacity-90 w-full h-full z-10 transition duration-500" />
                 <div className=" absolute opacity-0 group-hover:opacity-100 w-full h-full z-20 transition duration-300 flex justify-center items-center">
                     <span className="font-bold text-xl pr-1">See Website</span>
@@ -32,22 +40,23 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
                 <img className="w-full h-full group-hover:scale-110 transition duration-500" src={img} alt={title} />
             </a>
 
-            <div className="flex flex-wrap gap-2 pt-3 pb-4">
+            <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech]">
                 {stack.map((stackName) => {
                     return <p key={stackName} className="bg-primary-light rounded-lg text-sm px-3 py-1">
                         {stackName}
                     </p>
                 })}
             </div>
-            <div className="ml-4 mb-4">
+
+            <div className="ml-4 mb-4 sm:mb-3 [grid-area:_title]">
                 <Underline variant="smaller"><h2>{title}</h2></Underline>
             </div>
 
-            <p>
+            <p className="sm:text-lg sm:mt-2 [grid-area:_description]">
                 {description}
             </p>
 
-            <div className="flex justify-start gap-3 mt-5 items-center ml-4">
+            <div className="flex justify-start gap-3 mt-5 sm:mt-1 items-center ml-4 [grid-area:_buttom]">
                 <ProjectDetailButton internalUrl={internalUrl} projectTitle={title} />
                 {projectLinks.map((links) => {
                     return <ProjectExternalLinkButton {...links} key={links.url} />

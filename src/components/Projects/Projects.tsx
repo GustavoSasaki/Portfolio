@@ -8,12 +8,12 @@ export const Projects = forwardRef((props, ref) => {
 
     return (
         <section ref={ref as RefObject<HTMLDivElement>}   className="gu-container py-8">
-            <div className="ml-4 mb-5">
+            <div className="ml-4 mb-5 sm:mb-8">
                 <Underline variant="small"><h1>Projects</h1></Underline>
             </div>
 
-            {projects.map((project) => {
-                return <ProjectBox {...project} key={project.title} />
+            {projects.map((project, index) => {
+                return <ProjectBox {...project} key={project.title} index={index} />
             })}
         </section>
     )
