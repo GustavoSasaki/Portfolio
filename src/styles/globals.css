@@ -8,8 +8,9 @@
 
 
 @layer components {
-    .container {
+    .gu-container {
       padding-left: 12px;
       padding-right: 12px;
+      width: 100%;
     }
   }

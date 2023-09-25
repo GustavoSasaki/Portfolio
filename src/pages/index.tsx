@@ -8,8 +8,9 @@ import { Projects } from '@/components/Projects/Projects'
 import { NavBar } from '@/components/NavBar/NavBar'
 import { Contact } from '@/components/Contact/Contact'
 import { HeadBox } from '@/components/HeadBox'
+import { useRef } from 'react'
 
-
+//to-do
 //fac icon
 //change photo and url of head meta
 //fazer gustavo sasaki com ki verde
@@ -17,25 +18,29 @@ import { HeadBox } from '@/components/HeadBox'
 //buy a webite url
 //make pc version
 //make mobile menu
-//make pc menu
 //create detail rpoject page
 
 //not in mvp:
 //add pt version
 //use better photo
 // use next img
-//to-do fix triangle not in center in go home button footer
+//add indicador no menu da sessaoa atual
+//fix menu dando blend in na sessao do about
+//fix triangle not in center in go home button footer
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const navRefs = {
+    contact: useRef(null),
+    about: useRef(null),
+    projects: useRef(null)
+  }
   return (
     <>
       <HeadBox />
-      <div className={`flex flex-col justify-between bg-primary min-h-screen ${inter.className} text-secondary font-medium`}>
-        <header className="bg-primary-light">
-          <NavBar />
-        </header>
+      <NavBar  {...navRefs} />
+      <div className={`flex flex-col justify-between items-stretch bg-primary min-h-screen ${inter.className} text-secondary font-medium`}>
 
         <main className=" grow ">
           <div className="bg-primary-light">
@@ -44,11 +49,11 @@ export default function Home() {
             </div>
 
             <MainStack />
-            <About />
+            <About ref={navRefs.about} />
           </div>
           <Technologies />
-          <Projects />
-          <Contact />
+          <Projects  ref={navRefs.projects} />
+          <Contact ref={navRefs.contact} />
 
         </main>
 

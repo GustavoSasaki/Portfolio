@@ -7,7 +7,7 @@ import { ResumeButton } from "../SocialMediaButton/ResumeButton";
 
 export function Hero() {
     return (
-        <section className="container pt-[7.75rem] pb-20"
+        <section className="gu-container pt-[7.75rem] pb-20"
         style={{backgroundImage: "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg}}
         >
             <div className="mx-4">

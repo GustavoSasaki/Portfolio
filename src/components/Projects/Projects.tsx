@@ -1,9 +1,13 @@
 import { Underline } from "../Underline";
 import { Project, ProjectBox } from "./ProjectBox";
 import { FiExternalLink } from "react-icons/fi"
-export function Projects() {
+import { forwardRef, RefObject, useRef } from "react";
+
+
+export const Projects = forwardRef((props, ref) => {
+
     return (
-        <section className="container py-8">
+        <section ref={ref as RefObject<HTMLDivElement>}   className="gu-container py-8">
             <div className="ml-4 mb-5">
                 <Underline variant="small"><h1>Projects</h1></Underline>
             </div>
@@ -13,7 +17,7 @@ export function Projects() {
             })}
         </section>
     )
-}
+})
 
 
 

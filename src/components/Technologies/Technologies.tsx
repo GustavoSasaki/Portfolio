@@ -8,7 +8,7 @@ import { BiLogoTailwindCss, BiLogoSpringBoot } from 'react-icons/bi'
 
 export function Technologies() {
     return (
-        <section className="container py-8">
+        <section className="gu-container py-8">
             <div className="ml-4 mb-5">
                 <Underline variant="small"><h1>Technologies</h1></Underline>
             </div>

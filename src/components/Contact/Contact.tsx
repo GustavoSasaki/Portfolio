@@ -1,10 +1,10 @@
 import { FormControl, TextField, ThemeProvider } from "@mui/material";
-import { useState } from "react";
+import { forwardRef, RefObject, useRef, useState } from "react";
 import { Underline } from "../Underline";
 import { muiTheme } from "./FormTheme";
 import { SendEmailButton } from "./SendEmailButton";
 
-export function Contact() {
+export const Contact = forwardRef((props, ref) => {
     const [name, setName] = useState<string>()
     const [email, setEmail] = useState<string>()
     const [message, setMessage] = useState<string>()
@@ -13,7 +13,7 @@ export function Contact() {
     const messageError = message?.length === 0
 
     return (
-        <section className="container pb-10">
+        <section ref={ref as RefObject<HTMLDivElement>}  className="gu-container pb-10">
             <Underline variant={"small"}><h6>Contact Me</h6></Underline>
 
             <p className="text-sm pt-1 pb-4">
@@ -76,4 +76,4 @@ export function Contact() {
             </ThemeProvider>
         </section>
     )
-}
+})

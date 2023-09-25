@@ -1,8 +1,10 @@
+import { forwardRef, RefObject, useRef } from "react";
 import { Underline } from "../Underline";
 
-export function About() {
+export const About = forwardRef((props, ref) => {
+    
     return (
-        <section className="container pt-14 bg-primary-light pb-8">
+        <section ref={ref as RefObject<HTMLDivElement>} className="gu-container pt-14 bg-primary-light pb-8">
             <div className="ml-4">
                 <Underline variant="small"><h1>About</h1></Underline>
             </div>
@@ -34,6 +36,6 @@ export function About() {
             </div>
         </section>
     )
-}
+})
 
 
