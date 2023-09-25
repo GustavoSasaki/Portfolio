@@ -9,12 +9,10 @@ import { NavBar } from '@/components/NavBar/NavBar'
 
 
 //to-do fix triangle not in center in go home button footer
-//put aniamtion of zoom and change color to greem in project img
-//change font
 //fac icon
 //head meta dados
 //fazer gustavo sasaki com ki verde
-//add transion in animation
+//add transion in animation quandoe ntrando em sessao
 // use next img
 //use better photo
 //buy a webite url
@@ -22,6 +20,8 @@ import { NavBar } from '@/components/NavBar/NavBar'
 //make pc version
 //make mobile menu
 //make pc menu
+//create detail rpoject page
+//add pt version
 
 const inter = Inter({ subsets: ['latin'] })
 
