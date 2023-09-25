@@ -19,7 +19,7 @@ export function NavBar({ contact: contactRef, about: aboutRef, projects: project
 
             <nav className="flex justify-between items-center gu-container text-secondary ">
 
-                <a href='.' className='text-sm font-semibold hover:text-accent-400'>Gustavo Sasaki</a>
+                <HomeButton />
                 <MdMenu className='ml-auto w-7 h-7 sm:hidden' />
 
                 <div className='sm:flex justify-between items-center gap-3 hidden ml-auto'>
@@ -36,6 +36,12 @@ export function NavBar({ contact: contactRef, about: aboutRef, projects: project
 function NavLink({ children, onClick }: { children: JSX.Element[] | JSX.Element, onClick: () => void }) {
     return (
         <button onClick={onClick} className='capitalize text-sm font-semibold hover:text-accent-400'>{children}</button>
+    )
+}
+
+export function HomeButton(){
+    return (
+        <a href='.' className='text-sm font-semibold hover:text-accent-400'>Gustavo Sasaki</a>
     )
 }
 

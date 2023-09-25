@@ -5,11 +5,12 @@ export const About = forwardRef((props, ref) => {
     
     return (
         <section ref={ref as RefObject<HTMLDivElement>} className="gu-container pt-14 bg-primary-light pb-8">
-            <div className="ml-4">
+            <div className="ml-4 sm:mb-8">
                 <Underline variant="small"><h1>About</h1></Underline>
             </div>
 
-            <div className=' bg-gradient-to-tr from-accent-200 to-purple-300 rounded-3xl relative max-w-[200px] w-[1/4]  mx-auto my-7'>
+            <div className="sm:flex sm:gap-8">
+            <div className=' bg-gradient-to-tr from-accent-200 to-purple-300 rounded-3xl relative max-w-[250px] w-[1/4]  mx-auto my-7'>
                 <img alt='Gustavo Roncaglia' src='https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/photo'
                     className='w-full rounded-lg mix-blend-darken object-cover'
                 />
@@ -20,7 +21,7 @@ export const About = forwardRef((props, ref) => {
                 <p>
                     As a developer, I am interested in the creation of websites as a whole.
                     From design, front-end to back-end.
-                    Everything to create an intuitive and overall great user experience
+                    Everything to create an intuitive and overall great user experience.
                 </p>
 
                 <p>
@@ -28,11 +29,12 @@ export const About = forwardRef((props, ref) => {
                         {"I am also a recent graduate of "}
                     </span>
                     <a href="https://www5.usp.br/">University of São Paulo</a> 🎓 in bachelor of computer science.
-                    And worked approximately 1,5 years in Amdocs
+                    And worked approximately 1,5 years in Amdocs.
                 </p>
                 <p>
                     When not working, I am probably trying to make something edible, running or watching anime.
                 </p>
+            </div>
             </div>
         </section>
     )

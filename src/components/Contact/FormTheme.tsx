@@ -16,9 +16,10 @@ export const muiTheme = createTheme({
         MuiTextField: {
             styleOverrides: {
                 root: {
-                    borderRadius: '16px 16px 0px 0px',
+                    borderRadius: '8px 8px 0px 0px',
                     backgroundColor :'#FFF',
                     '.MuiInputBase-root':{
+                        borderRadius: '8px 8px 0px 0px',
                         backgroundColor :'#FFF',
                         fontWeight:'500',
                     },
