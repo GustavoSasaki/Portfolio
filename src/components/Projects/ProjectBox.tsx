@@ -50,7 +50,7 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
             <div className="flex justify-start gap-3 mt-5 items-center ml-4">
                 <ProjectDetailButton internalUrl={internalUrl} projectTitle={title} />
                 {projectLinks.map((links) => {
-                    return <ProjectExternalLinkButton {...links} />
+                    return <ProjectExternalLinkButton {...links} key={links.url} />
                 })}
 
             </div>

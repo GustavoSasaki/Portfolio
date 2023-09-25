@@ -6,6 +6,7 @@ import { MainStack } from '@/components/Hero/MainStack/MainStack'
 import { Technologies } from '@/components/Technologies/Technologies'
 import { Projects } from '@/components/Projects/Projects'
 import { NavBar } from '@/components/NavBar/NavBar'
+import { Contact } from '@/components/Contact/Contact'
 
 
 //to-do fix triangle not in center in go home button footer
@@ -16,7 +17,6 @@ import { NavBar } from '@/components/NavBar/NavBar'
 // use next img
 //use better photo
 //buy a webite url
-//make form :<
 //make pc version
 //make mobile menu
 //make pc menu
@@ -43,6 +43,7 @@ export default function Home() {
         </div>
         <Technologies />
         <Projects />
+        <Contact />
 
       </main>
 

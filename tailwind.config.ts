@@ -1,20 +1,34 @@
-import type { Config } from 'tailwindcss'
+/** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors'
 
-const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+export default module.exports = {
+  content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: {
+          ...colors.stone,
+          lighter: colors.stone['700'] ,
+          light: colors.stone['800'] ,
+          DEFAULT: colors.stone['900'] ,
+        },
+        secondary: {...colors.gray,
+          darker: colors.gray['400'] ,
+          dark: colors.gray['300'] ,
+          DEFAULT: '#FFF' ,
+        },
+        accent: {
+          200: '#8cedb1',
+          400: '#3BBA6C',
+          DEFAULT: '#319B5A',
+          600: '#277C48'
+        },
       },
+
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+} as const
+
