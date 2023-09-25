@@ -12,4 +12,4 @@ export function SocialMediaButton({ children, ...attr }: ButtonInput) {
 
 
 //hover class
-const className=" hover:[&_svg]:text-accent  focus:[&_svg]:text-accent active:[&_svg]:text-accent transition duration-300 transform hover:scale-125 focus:scale-125 active:scale-125 ease-in-out "
+const className=" hover:[&_svg]:text-accent  focus:[&_svg]:text-accent active:[&_svg]:text-accent transition duration-300 transform hover:scale-125 focus:scale-125 active:scale-125 ease-in-out flex items-center "

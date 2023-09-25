@@ -7,38 +7,39 @@ import { ResumeButton } from "../SocialMediaButton/ResumeButton";
 
 export function Hero() {
     return (
-        <section className="gu-container pt-[7.75rem] pb-20"
-        style={{backgroundImage: "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg}}
+        <section className=" pt-[7.75rem] pb-20"
+            style={{ backgroundImage: "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg }}
         >
-            <div className="mx-4">
-                <div id="hero-title">
-                    <p className="text-secondary-dark text-sm pl-1">Hello, my name is</p>
-                    <div className="text-4xl  font-bold">
-                        <h1 className="inline">Gustavo </h1><span>|</span>
-                        <br />
-                        <Underline variant="big">
-                            <p>Web Developer</p>
-                        </Underline>
+            <div className="gu-container">
+                <div className="mx-4">
+                    <div id="hero-title">
+                        <p className="text-secondary-dark text-sm sm:text-base pl-1">Hello, my name is</p>
+                        <div className="text-4xl sm:text-5xl font-bold">
+                            <h1 className="inline">Gustavo </h1><span>|</span>
+                            <br />
+                            <Underline variant="big">
+                                <p>Web Developer</p>
+                            </Underline>
+                        </div>
                     </div>
+
+                    <div id="hero-social-links" className="flex justify-start items-centers mt-9">
+                        <SocialMediaButton href={linkedinUrl} title="LinkedIn">
+                            <LinkedInIcon className="h-[39px] w-[39px] sm:h-[50px] sm:w-[50px] text-secondary" />
+                        </SocialMediaButton>
+
+                        <SocialMediaButton href={githubUrl} title="GitHub" className="ml-1 mr-4">
+                            <GitHubIcon className="h-[34px] w-[34px] sm:h-[42px] sm:w-[42px] text-secondary" />
+                        </SocialMediaButton>
+
+                        <ResumeButton variant={"hero"} />
+                    </div>
+
+                    <p className="text-secondary-dark mt-3 max-w-[36ch] sm:text-lg">
+                        {description}
+                    </p>
                 </div>
-
-                <div id="hero-social-links" className="flex justify-start mt-9">
-                    <SocialMediaButton href={linkedinUrl} title="LinkedIn">
-                        <LinkedInIcon className="h-[39px] w-[39px] text-secondary" />
-                    </SocialMediaButton>
-
-                    <SocialMediaButton href={githubUrl} title="GitHub" className="ml-1 mr-4">
-                        <GitHubIcon className="h-[34px] w-[34px] text-secondary" />
-                    </SocialMediaButton>
-
-                    <ResumeButton variant={"hero"} />
-                </div>
-
-                <p className="text-secondary-dark mt-3">
-                    {description}
-                </p>
             </div>
-
         </section>
     )
 }

@@ -11,6 +11,8 @@
     .gu-container {
       padding-left: 12px;
       padding-right: 12px;
-      width: 100%;
+      width: min(100%,900px);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
