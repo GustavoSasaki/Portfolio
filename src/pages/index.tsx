@@ -14,8 +14,6 @@ import Projects from '@/components/Projects/Projects'
 //fac icon
 //change photo and url of head meta
 //fazer gustavo sasaki com ki verde
-//add transion in animation quandoe ntrando em sessao
-//buy a webite url
 //make mobile menu
 //create detail rpoject page
 
