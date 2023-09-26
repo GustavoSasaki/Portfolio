@@ -16,9 +16,9 @@ import Projects from '@/components/Projects/Projects'
 //fazer gustavo sasaki com ki verde
 //add transion in animation quandoe ntrando em sessao
 //buy a webite url
-//make pc version
 //make mobile menu
 //create detail rpoject page
+//add aniamtion to butons
 
 //not in mvp:
 //add pt version

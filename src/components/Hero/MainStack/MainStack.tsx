@@ -6,7 +6,7 @@ import { DiReact } from 'react-icons/di';
 export function MainStack() {
 
     return (
-        <section className={`-mt-[68px] max-w-[600px] mx-auto`}>
+        <section className={`-mt-[68px] max-w-[min(600px,_calc(100%_-_32px))] mx-auto`}>
             <h1 className="text-base font-bold text-secondary-dark pl-2">Main Stack</h1>
             <div className=" bg-primary-lighter rounded-xl  block px-4 py-1 border-secondary-700 border-b-2">
                 <div className='flex justify-around items-center'>
