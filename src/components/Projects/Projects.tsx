@@ -4,7 +4,7 @@ import { FiExternalLink } from "react-icons/fi"
 import { forwardRef, RefObject, useRef } from "react";
 
 
-export const Projects = forwardRef((props, ref) => {
+const Projects = forwardRef((props, ref) => {
 
     return (
         <section ref={ref as RefObject<HTMLDivElement>}   className="gu-container py-8">
@@ -36,3 +36,7 @@ const projects: Project[] = [
         description: "The best way of learning a language is actually using it. GameHongo is a list-like system in which users can rate how difficult it is the Japanese in games or YouTube channels."
     },
 ] 
+
+
+Projects.displayName = 'Projects';
+export default Projects;

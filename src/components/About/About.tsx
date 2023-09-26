@@ -1,7 +1,7 @@
 import { forwardRef, RefObject, useRef } from "react";
 import { Underline } from "../Underline";
 
-export const About = forwardRef((props, ref) => {
+const About = forwardRef((props, ref) => {
     
     return (
         <section ref={ref as RefObject<HTMLDivElement>} className="gu-container pt-14 bg-primary-light pb-8">
@@ -41,3 +41,5 @@ export const About = forwardRef((props, ref) => {
 })
 
 
+About.displayName = 'About';
+export default About;

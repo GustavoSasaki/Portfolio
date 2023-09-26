@@ -1,14 +1,14 @@
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/Footer/Footer'
 import { Hero } from '@/components/Hero/Hero'
-import { About } from '@/components/About/About'
 import { MainStack } from '@/components/Hero/MainStack/MainStack'
 import { Technologies } from '@/components/Technologies/Technologies'
-import { Projects } from '@/components/Projects/Projects'
 import { NavBar } from '@/components/NavBar/NavBar'
-import { Contact } from '@/components/Contact/Contact'
 import { HeadBox } from '@/components/HeadBox'
 import { useRef } from 'react'
+import About from '@/components/About/About'
+import Contact from '@/components/Contact/Contact'
+import Projects from '@/components/Projects/Projects'
 
 //to-do
 //fac icon

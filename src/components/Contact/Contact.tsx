@@ -4,7 +4,7 @@ import { Underline } from "../Underline";
 import { muiTheme } from "./FormTheme";
 import { SendEmailButton } from "./SendEmailButton";
 
-export const Contact = forwardRef((props, ref) => {
+const Contact = forwardRef((props, ref) => {
     const [name, setName] = useState<string>()
     const [email, setEmail] = useState<string>()
     const [message, setMessage] = useState<string>()
@@ -77,3 +77,6 @@ export const Contact = forwardRef((props, ref) => {
         </section>
     )
 })
+
+Contact.displayName = 'Contact';
+export default Contact;
