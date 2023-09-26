@@ -18,7 +18,6 @@ import Projects from '@/components/Projects/Projects'
 //buy a webite url
 //make mobile menu
 //create detail rpoject page
-//add aniamtion to butons
 
 //not in mvp:
 //add pt version

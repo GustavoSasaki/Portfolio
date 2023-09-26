@@ -1,14 +1,23 @@
+import { MdSend } from 'react-icons/md'
+import { GoRightIcon } from '../GoRightIcon'
+
 export function SendEmailButton() {
 
     return (
         <button type="submit"
             className={` rounded-3xl px-5 py-3
-        flex justify-center items-center
-        bg-accent group-hover:bg-accent-600  group-focus:bg-accent-600`}
+            flex justify-center items-center group relative
+            bg-accent hover:bg-accent-600  focus:bg-accent-600 
+            hover:pl-3
+            transition-all ease-out duration-300`}
         >
-            <p className="text-sm font-bold">
+            <p className="text-lg font-bold transition-all ease-out duration-300 group-hover:mr-6">
                 Send Email
             </p>
+            <GoRightIcon>
+                <MdSend />
+            </GoRightIcon>
+
         </button>
     )
 }

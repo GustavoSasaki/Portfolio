@@ -1,20 +1,27 @@
 import { ProjectLink } from "./ProjectBox";
+import { GoRightIcon } from '../GoRightIcon'
 
 export function ProjectExternalLinkButton({ url, name, icon }: ProjectLink) {
     return (
         <a href={url} target="_blank" title={name}
-            className="inline-block group transition duration-300 transform"
-        >
-            <div className={`border-accent-600 border-4 rounded-3xl px-5 py-1
+
+            className={`border-accent-600 border-4 rounded-3xl px-6 py-1
+                group relative hover:pl-2
                 flex justify-center items-center
-                group-hover:bg-accent-600  group-focus:bg-accent-600`}
+                hover:bg-accent-600  focus:bg-accent-600
+                transition-all ease-out duration-300`}
+        >
+
+            <p className="text-accent font-bold transition-all ease-out duration-300
+                group-hover:text-secondary group-focus:text-secondary group-hover:mr-4"
             >
-                <p className="text-accent text-sm font-semibold
-                group-hover:text-secondary group-focus:text-secondary"
-                >
-                    {name}
-                </p>
-            </div>
+                {name}
+            </p>
+
+            <GoRightIcon>
+                {icon}
+            </GoRightIcon>
+
         </a>
     )
 }
