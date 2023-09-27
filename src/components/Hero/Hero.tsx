@@ -1,6 +1,5 @@
 import { SocialMediaButton } from "../SocialMediaButton/SocialMediaButton"
-import { BiLogoGithub } from 'react-icons/bi';
-import {BiLogoLinkedinSquare } from 'react-icons/bi';
+import { BiLogoGithub, BiLogoLinkedinSquare } from 'react-icons/bi';
 import { linkedinUrl, githubUrl } from "../SocialMediaButton/SocialMediaUrl"
 import { Underline } from "../Underline"
 import { ResumeButton } from "../SocialMediaButton/ResumeButton";
