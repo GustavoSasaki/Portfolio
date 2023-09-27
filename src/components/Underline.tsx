@@ -19,7 +19,7 @@ function getVariantDifference(variant : Variant) : [string,string,number]{
         return ['text-4xl sm:text-5xl','h-[14px]',16]
     }
     if(variant === 'small'){
-        return ['text-3xl sm:text-3xl','h-[9px]',16] 
+        return ['text-3xl sm:text-4xl','h-[9px]',16] 
     }
     return ['text-2xl sm:text-3xl','h-[6px]',10] 
 }

@@ -14,7 +14,7 @@ export interface ProjectLink {
 export interface Project {
     img: string;
     title: string;
-    description: string;
+    description: JSX.Element;
     stack: string[];
     internalUrl: string;
     externalUrl: string;
@@ -34,17 +34,17 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
     : `"title img" "tech img" "description img" "buttom img"`
 
     return (
-        <article className="sm:grid sm:gap-x-4 mb-12"
+        <article className="sm:grid sm:gap-x-4 mb-16"
             style={{ gridTemplateAreas }}
         >
 
-            <a href={externalUrl} target="_blank" className={"overflow-hidden w-72 h-72 block mx-auto rounded-lg relative group [grid-area:_img] mb-3"+slideWhenVisible}>
+            <a href={externalUrl} target="_blank" className={"overflow-hidden w-72 h-72 md:w-80 md:h-80 block mx-auto rounded-lg relative group [grid-area:_img] mb-3 "+slideWhenVisible}>
                 <div className="absolute opacity-0 bg-accent-600 group-hover:opacity-90 w-full h-full z-10 transition duration-500" />
                 <div className=" absolute opacity-0 group-hover:opacity-100 w-full h-full z-20 transition duration-300 flex justify-center items-center">
                     <span className="font-bold text-xl pr-1">See Website</span>
                     <FiExternalLink className="font-bold text-xl" />
                 </div>
-                <img className="w-full h-full group-hover:scale-110 transition duration-500" src={img} alt={title} />
+                <img className="w-full h-full group-hover:scale-110 transition duration-500 object-cover" src={img} alt={title} />
             </a>
 
             <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech]">
@@ -59,12 +59,12 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
                 <Underline variant="smaller"><h2>{title}</h2></Underline>
             </div>
 
-            <p ref={observerRef} className="sm:text-lg sm:mt-2 [grid-area:_description]">
+            <div ref={observerRef} className="sm:text-lg sm:mt-2 [grid-area:_description] prose prose-base prose-invert hover:prose-a:text-accent">
                 {description}
-            </p>
+            </div>
 
-            <div className="flex justify-start gap-3 mt-5 sm:mt-1 items-center ml-4 [grid-area:_buttom]">
-                <ProjectDetailButton internalUrl={internalUrl} projectTitle={title} />
+            <div className="flex justify-start gap-3 mt-5 items-center [grid-area:_buttom]">
+                {/*<ProjectDetailButton internalUrl={internalUrl} projectTitle={title} /> */}
                 {projectLinks.map((links) => {
                     return <ProjectExternalLinkButton {...links} key={links.url} />
                 })}
