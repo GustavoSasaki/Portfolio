@@ -1,3 +1,4 @@
+import { japFont } from '@/pages';
 import { MutableRefObject } from 'react'
 import { MdMenu } from 'react-icons/md'
 import { scrollToPosition } from './scrollToPosition';
@@ -13,8 +14,8 @@ export function NavBar({ contact: contactRef, about: aboutRef, projects: project
 
     return (
 
-        <header className={`sticky ${scrollDirection === "down" ? "-top-12" : "top-0"} transition-all duration-1000  
-            z-50 w-full h-12 bg-primary-light flex items-center shadow`}
+        <header className={`sticky ${scrollDirection === "down" ? "-top-14" : "top-0"} transition-all duration-1000  
+            z-50 w-full h-14 bg-primary-light flex items-center shadow`}
         >
 
             <nav className="flex justify-between items-center gu-container text-secondary ">
@@ -35,13 +36,22 @@ export function NavBar({ contact: contactRef, about: aboutRef, projects: project
 
 function NavLink({ children, onClick }: { children: JSX.Element[] | JSX.Element, onClick: () => void }) {
     return (
-        <button onClick={onClick} className='capitalize text-sm font-semibold hover:text-accent-400'>{children}</button>
+        <button onClick={onClick} className='capitalize text-base font-semibold hover:text-accent-400'>{children}</button>
     )
 }
 
-export function HomeButton(){
+export function HomeButton() {
     return (
-        <a href='.' className='text-sm font-semibold hover:text-accent-400'>Gustavo Sasaki</a>
+        <a href='.' className='text-xl font-semibold '>
+            <span className="z-20 relative">Gus</span>
+            <span className={`text-accent-400 font-bold text-3xl mx-[-10px] z-10 relative ${japFont.className} `}
+                style={{
+                    maskImage: 'radial-gradient(529.42% 80.77% at 50% 19.23%, #D9D9D9 0%, rgba(234, 220, 220, 0.00) 80%)',
+                }}
+            >木</span>
+            <span className="z-20 relative">avo Sasaki
+            </span>
+        </a>
     )
 }
 

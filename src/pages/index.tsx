@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Inter } from '@next/font/google'
 import { Footer } from '@/components/Footer/Footer'
 import { Hero } from '@/components/Hero/Hero'
 import { MainStack } from '@/components/Hero/MainStack/MainStack'
@@ -9,11 +9,10 @@ import { useRef } from 'react'
 import About from '@/components/About/About'
 import Contact from '@/components/Contact/Contact'
 import Projects from '@/components/Projects/Projects'
+import localFont  from '@next/font/local'
 
 //to-do
-//fac icon
 //change photo and url of head meta
-//fazer gustavo sasaki com ki verde
 //make mobile menu
 //create detail rpoject page
 
@@ -26,6 +25,8 @@ import Projects from '@/components/Projects/Projects'
 //fix triangle not in center in go home button footer
 
 const inter = Inter({ subsets: ['latin'] })
+export const japFont = localFont({src:'../util/NotoSansJP-VariableFont_wght.ttf', variable : '--font-jap'})
+
 
 export default function Home() {
   const navRefs = {
@@ -49,7 +50,7 @@ export default function Home() {
             <About ref={navRefs.about} />
           </div>
           <Technologies />
-          <Projects  ref={navRefs.projects} />
+          <Projects ref={navRefs.projects} />
           <Contact ref={navRefs.contact} />
 
         </main>
@@ -59,3 +60,5 @@ export default function Home() {
     </>
   )
 }
+
+//linear-gradient(to top,transparent 10%,#FFF) top,
