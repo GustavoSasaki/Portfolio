@@ -26,7 +26,9 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
     const isEven = index % 2 == 0
 
     const [observerRef, { wasEverVisible }] = useTrackVisibility();
-    const preStyle = isEven ?  " opacity-0 translate-x-[-50px]" :  " opacity-0 translate-x-[50px]"
+    const preStyle = isEven 
+    ?  " opacity-0 sm:translate-x-[-50px] sm:translate-y-[0px] translate-y-[50px] translate-y-[0px]" 
+    :  " opacity-0 sm:translate-x-[50px] sm:translate-y-[0px] translate-y-[50px] translate-y-[0px]"
     let slideWhenVisible = useSlidInStyle({ wasEverVisible, preStyle })
     
     const gridTemplateAreas = isEven
@@ -34,7 +36,7 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
     : `"title img" "tech img" "description img" "button img"`
 
     return (
-        <article className="sm:grid sm:gap-x-4 mb-16"
+        <article className="sm:grid sm:gap-x-4 mb-24 sm:mb-16"
             style={{ gridTemplateAreas }}
         >
 
@@ -47,7 +49,7 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
                 <img className="w-full h-full group-hover:scale-110 transition duration-500 object-cover" src={img} alt={title} />
             </a>
 
-            <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech]">
+            <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech] justify-center sm:justify-start ">
                 {stack.map((stackName) => {
                     return <p key={stackName} className="bg-primary-light rounded-lg text-sm px-3 py-1">
                         {stackName}
@@ -59,7 +61,7 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
                 <Underline variant="smaller"><h2>{title}</h2></Underline>
             </div>
 
-            <div ref={observerRef} className="sm:text-lg sm:mt-2 [grid-area:_description] prose prose-base prose-invert hover:prose-a:text-accent">
+            <div ref={observerRef} className="sm:text-lg mx-2 sm:mx-0 sm:mt-2 [grid-area:_description] prose prose-base prose-invert hover:prose-a:text-accent">
                 {description}
             </div>
 

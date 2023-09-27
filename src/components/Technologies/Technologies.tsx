@@ -16,7 +16,7 @@ export function Technologies() {
 
 
     return (
-        <section className="gu-container pt-8 mb-12">
+        <section className="gu-container pt-8 mb-12 max-w-full overflow-hidden">
             <div className="ml-4 mb-5">
                 <Underline variant="small"><h1>Technologies</h1></Underline>
             </div>

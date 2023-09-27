@@ -7,7 +7,7 @@ import { forwardRef, RefObject, useRef } from "react";
 const Projects = forwardRef((props, ref) => {
 
     return (
-        <section ref={ref as RefObject<HTMLDivElement>} className="gu-container py-8">
+        <section ref={ref as RefObject<HTMLDivElement>} className="gu-container pt-8 pb-4 sm:pb-8">
             <div className="ml-4 mb-5 sm:mb-8">
                 <Underline variant="small"><h1>Projects</h1></Underline>
             </div>

@@ -47,6 +47,7 @@ export function HomeButton() {
             <span className={`text-accent-400 font-bold text-3xl mx-[-10px] z-10 relative ${japFont.className} `}
                 style={{
                     maskImage: 'radial-gradient(529.42% 80.77% at 50% 19.23%, #D9D9D9 0%, rgba(234, 220, 220, 0.00) 80%)',
+                    WebkitMaskImage: 'radial-gradient(529.42% 80.77% at 50% 19.23%, #D9D9D9 0%, rgba(234, 220, 220, 0.00) 80%)'
                 }}
             >木</span>
             <span className="z-20 relative">avo Sasaki
