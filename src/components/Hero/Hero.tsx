@@ -1,6 +1,6 @@
 import { SocialMediaButton } from "../SocialMediaButton/SocialMediaButton"
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { BiLogoGithub } from 'react-icons/bi';
+import {BiLogoLinkedinSquare } from 'react-icons/bi';
 import { linkedinUrl, githubUrl } from "../SocialMediaButton/SocialMediaUrl"
 import { Underline } from "../Underline"
 import { ResumeButton } from "../SocialMediaButton/ResumeButton";
@@ -25,11 +25,11 @@ export function Hero() {
 
                     <div id="hero-social-links" className="flex justify-start items-centers mt-9">
                         <SocialMediaButton href={linkedinUrl} title="LinkedIn">
-                            <LinkedInIcon className="h-[39px] w-[39px] sm:h-[50px] sm:w-[50px] text-secondary" />
+                            <BiLogoLinkedinSquare className="h-[40px] w-[40px] text-secondary" />
                         </SocialMediaButton>
 
                         <SocialMediaButton href={githubUrl} title="GitHub" className="ml-1 mr-4">
-                            <GitHubIcon className="h-[34px] w-[34px] sm:h-[42px] sm:w-[42px] text-secondary" />
+                            <BiLogoGithub className="h-[40px] w-[40px]  text-secondary" />
                         </SocialMediaButton>
 
                         <ResumeButton variant={"hero"} />

@@ -29,7 +29,7 @@ export function Footer() {
                     </SocialMediaButton>
 
                     <SocialMediaButton href={githubUrl} title="Resume" className='mr-3'>
-                        <GitHubIcon className="h-[38px] w-[38px] text-secondary" />
+                        <GitHubIcon className="h-[40px] w-[40px] text-secondary" />
                     </SocialMediaButton>
 
                     <ResumeButton variant={'footer'} />
