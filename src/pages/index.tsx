@@ -12,7 +12,6 @@ import Projects from '@/components/Projects/Projects'
 import localFont  from '@next/font/local'
 
 //to-do
-//change photo and url of head meta
 //make mobile menu
 //create detail rpoject page
 
@@ -23,6 +22,7 @@ import localFont  from '@next/font/local'
 //add indicador no menu da sessaoa atual
 //fix menu dando blend in na sessao do about
 //fix triangle not in center in go home button footer
+//put sub-title in about
 
 const inter = Inter({ subsets: ['latin'] })
 export const japFont = localFont({src:'../util/NotoSansJP-VariableFont_wght.ttf', variable : '--font-jap'})
