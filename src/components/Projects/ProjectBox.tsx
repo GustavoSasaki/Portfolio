@@ -30,8 +30,8 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
     let slideWhenVisible = useSlidInStyle({ wasEverVisible, preStyle })
     
     const gridTemplateAreas = isEven
-    ? `"img title" "img tech" "img description" "img buttom"`
-    : `"title img" "tech img" "description img" "buttom img"`
+    ? `"img title" "img tech" "img description" "img button"`
+    : `"title img" "tech img" "description img" "button img"`
 
     return (
         <article className="sm:grid sm:gap-x-4 mb-16"
@@ -63,7 +63,7 @@ export function ProjectBox({ img, title, description, stack, internalUrl, extern
                 {description}
             </div>
 
-            <div className="flex justify-start gap-3 mt-5 items-center [grid-area:_buttom]">
+            <div className="flex justify-start gap-3 mt-5 items-center [grid-area:_button]">
                 {/*<ProjectDetailButton internalUrl={internalUrl} projectTitle={title} /> */}
                 {projectLinks.map((links) => {
                     return <ProjectExternalLinkButton {...links} key={links.url} />

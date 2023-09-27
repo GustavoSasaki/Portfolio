@@ -46,7 +46,7 @@ const projects: Project[] = [
                     There was a lot of care to ensure the user experience was snap and intuitive.
                 </p>
                 <ul>
-                    <li>It was utilized redis for caching common searchs</li>
+                    <li>It was utilized redis for caching common searches</li>
                     <li>Every edition on information utilizes optimistic updates</li>
                     <li>Pages have server or static rendering</li>
                     <li>Responsive Design</li>
@@ -95,7 +95,7 @@ const projects: Project[] = [
                     One challenge that I faced was that AI generation was taking too much time. To resolve this:
                 </p>
                 <ul>
-                    <li>I paralized the backstory and image generation.</li>
+                    <li>I parallelize the backstory and image generation.</li>
                     <li> I added a spinning wheel and loading bar.</li>
                 </ul>
                 <p>

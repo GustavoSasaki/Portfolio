@@ -13,12 +13,12 @@ import localFont  from '@next/font/local'
 
 //to-do
 //make mobile menu
-//create detail rpoject page
 
 //not in mvp:
 //add pt version
 //use better photo
 // use next img
+//create detail project page
 //add indicador no menu da sessaoa atual
 //fix menu dando blend in na sessao do about
 //fix triangle not in center in go home button footer
