@@ -2,7 +2,6 @@ import { MutableRefObject } from "react";
 import { getPrefersReducedMotion } from "./getPrefersReducedMotion";
 
 export const scrollToPosition = (ref?: MutableRefObject<HTMLInputElement | null>) => {
-  console.log(ref)
   if (!ref?.current) return
 
   const reduceMotion = getPrefersReducedMotion()

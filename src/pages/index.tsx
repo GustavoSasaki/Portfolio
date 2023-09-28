@@ -11,9 +11,6 @@ import Contact from '@/components/Contact/Contact'
 import Projects from '@/components/Projects/Projects'
 import localFont  from '@next/font/local'
 
-//to-do
-//make mobile menu
-
 //not in mvp:
 //add pt version
 //use better photo
@@ -23,6 +20,8 @@ import localFont  from '@next/font/local'
 //fix menu dando blend in na sessao do about
 //fix triangle not in center in go home button footer
 //put sub-title in about
+//make up button on footer mobile, go up instead of being an A
+// menu mobile, change icon to X when open
 
 const inter = Inter({ subsets: ['latin'] })
 export const japFont = localFont({src:'../util/NotoSansJP-VariableFont_wght.ttf', variable : '--font-jap'})

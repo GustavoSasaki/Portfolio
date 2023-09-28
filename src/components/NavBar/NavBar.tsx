@@ -1,6 +1,7 @@
 import { japFont } from '@/pages';
-import { MutableRefObject } from 'react'
+import { MutableRefObject, useState } from 'react'
 import { MdMenu } from 'react-icons/md'
+import  MobileNav from './MobileNav';
 import { scrollToPosition } from './scrollToPosition';
 import useScrollDirection from './useScrollDirection';
 
@@ -11,17 +12,25 @@ interface NavRefs {
 }
 export function NavBar({ contact: contactRef, about: aboutRef, projects: projectsRef }: NavRefs) {
     const scrollDirection = useScrollDirection();
+    const [openMobile, setOpenMobile] = useState(false)
 
     return (
 
         <header className={`sticky ${scrollDirection === "down" ? "-top-14" : "top-0"} transition-all duration-1000  
-            z-50 w-full h-14 bg-primary-light flex items-center shadow`}
+            z-40 w-full h-14 bg-primary-light flex items-center shadow`}
         >
 
             <nav className="flex justify-between items-center gu-container text-secondary ">
 
                 <HomeButton />
-                <MdMenu className='ml-auto w-7 h-7 sm:hidden' />
+                <MobileNav open={openMobile} setOpen={setOpenMobile} contactRef={contactRef} 
+                    aboutRef={aboutRef} projectsRef={projectsRef}
+                />  
+
+
+                <button className={`sm:hidden relative z-20 ${openMobile ? 'text-accent-400' : ''}`} onClick={() => setOpenMobile(!openMobile)}>
+                    <MdMenu className='ml-auto w-7 h-7' />
+                </button>
 
                 <div className='sm:flex justify-between items-center gap-3 hidden ml-auto'>
                     <NavLink onClick={() => scrollToPosition(aboutRef)}><p>about</p></NavLink>
