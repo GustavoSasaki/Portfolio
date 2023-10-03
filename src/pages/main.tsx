@@ -11,6 +11,18 @@ import Contact from '@/components/Contact/Contact'
 import Projects from '@/components/Projects/Projects'
 import localFont  from '@next/font/local'
 
+//not in mvp:
+//add pt version
+//use better photo
+// use next img
+//create detail project page
+//add indicador no menu da sessaoa atual
+//fix menu dando blend in na sessao do about
+//fix triangle not in center in go home button footer
+//put sub-title in about
+//make up button on footer mobile, go up instead of being an A
+// menu mobile, change icon to X when open
+
 const inter = Inter({ subsets: ['latin'] })
 export const japFont = localFont({src:'../util/NotoSansJP-VariableFont_wght.ttf', variable : '--font-jap'})
 
@@ -30,7 +42,7 @@ export default function Home() {
         <main className=" grow ">
           <div className="bg-primary-light">
             <div className="bg-primary pb-24">
-              <Hero variant={'back'} />
+              <Hero  variant={'main'} />
             </div>
 
             <MainStack />
