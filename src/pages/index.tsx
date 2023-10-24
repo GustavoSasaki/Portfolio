@@ -10,6 +10,8 @@ import About from '@/components/About/About'
 import Contact from '@/components/Contact/Contact'
 import Projects from '@/components/Projects/Projects'
 import localFont  from '@next/font/local'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const inter = Inter({ subsets: ['latin'] })
 export const japFont = localFont({src:'../util/NotoSansJP-VariableFont_wght.ttf', variable : '--font-jap'})
@@ -48,4 +50,12 @@ export default function Home() {
   )
 }
 
-//linear-gradient(to top,transparent 10%,#FFF) top,
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', [
+      'hero','contact',
+    ])),
+  },
+})
