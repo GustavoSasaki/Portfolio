@@ -1,0 +1,33 @@
+{
+    "title":"Projects",
+    "see-website":"See Website",
+    "gamehongo":{
+        "subtitle": "The best way of learning a language is actually using it.",
+        "description":"In GameHongo you can find games and channels suitable for your current japanese level.\nThe website is a list-like system in which users can rate how difficult is the language of games and videos.",
+        "care-experience":"There was a lot of care to ensure the user experience was snap and intuitive.",
+        "redis":"Redis was utilized for caching common searches",
+        "optimistic":"Every edition on information utilizes optimistic updates",
+        "ssr":"Pages have server or static rendering",
+        "responsive":"Responsive Design",
+        "oauth":"OAuth Login",
+        "view-button":"View it Here"
+    },
+    "amdocs":{
+        "title":"Creation of telephony packages",
+        "introduction":"While working in Amdocs, I participate in the development of an web tool for creation telephony packages to Oi Company.",
+        "main-task":"I was the main back-end developer in the team. So I mostly worked on the spring boot java server and the oracleSQL database. But sometimes, I helped in the implementation of new pages with HTML/jQuery.",
+        "other-tasks":"I also created a bash tool for converting GitLab commits to ClearCase. Greatly improving the velocity of building new releases.",
+        "view-button":"View it Here"
+    },
+    "hero-ai":{
+        "title": "Hero Creation AI",
+        "subtitle":"Create your Super Hero with just one click ",
+        "description":"In this website you can quickly create a new hero with AI generated image and backstory.\nThe project was utilized to improve my front-end and design skills.",
+        "challenges":"One challenge that I faced was that AI generation was taking too much time. To resolve this:",
+        "paralalized":"I parallelize the backstory and image generation.",
+        "loading-bar":"I added a spinning wheel and loading bar.",
+        "according" : "According to ",
+        "irene":", after 5 seconds of waiting you have to show the user that the system is progressing and not just stuck.",
+        "view-button":"View it Here"
+    }
+}

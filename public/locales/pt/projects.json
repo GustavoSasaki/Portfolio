@@ -1,0 +1,33 @@
+{
+    "title":"Projetos",
+    "see-website":"Veja o site",
+    "gamehongo":{
+        "subtitle": "A melhor forma de aprender uma lingua é usando ela.",
+        "description":"No GameHongo, você consegue achar jogos e canais do youtube adequados ao seu nível atual de japonês.\nO site é um sistema parecido com lista no qual os usuários avaliam o quão difícil é a linguagem dos jogos e vídeos.",
+        "care-experience":"No desenvolvimento, tive bastânte cuidado para criar uma experiência de usuário intuitiva e responsivo.",
+        "redis":"Redis foi utilizado para cachear searchs comuns",
+        "optimistic":"Toda edição de informação utiliza optimistic updates",
+        "ssr":"As páginas têm renderização estática ou SSR",
+        "responsive":"O design é responsivo",
+        "oauth":"o login é por Aouth",
+        "view-button":"Entre no site"
+    },
+    "amdocs":{
+        "title":"Criação de pacotes de telefonia",
+        "introduction":"Enquanto trabalho na Amdocs, participei do desenvolvimento de uma ferramenta web para criação de pacotes de telefonia para a Empresa Oi.",
+        "main-task":"Fui o principal desenvolvedor back-end da equipe. Então, trabalhei principalmente no servidor Java Spring Boot e no banco de dados OracleSQL. Mas às vezes ajudei na implementação de novas páginas com HTML/jQuery.",
+        "other-tasks":"Também criei uma série de comandos bash para converter commits do GitLab para ClearCase. Aumentando drasticamente a velocidade de build de novas releases.",
+        "view-button":"Entre no site"
+    },
+    "hero-ai":{
+        "title": "Criação de herois AI",
+        "subtitle":"Crie seu super-herói com apenas um clique",
+        "description":"Neste site você consegue criar rapidamente um novo herói com imagem de perfil e backstory geradas por IA.\n O projeto foi utilizado para melhorar minhas habilidades de front-end e design.",
+        "challenges":"Um dos desafios que enfrentei foi que a geração de IA estava demorando muito. Para resolver isso:",
+        "paralalized":"Eu paralelizei a geração de backstory e a geração de imagem.",
+        "loading-bar":"Eu adicionei uma spinning wheel e uma barra de loading.",
+        "according" : "De acordo com ",
+        "irene":", após 5 segundos de espera você tem que mostrar ao usuário que o sistema está progredindo e não apenas travado.",
+        "view-button":"Entre no site"
+    }
+}

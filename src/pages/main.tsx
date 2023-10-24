@@ -12,7 +12,6 @@ import Projects from '@/components/Projects/Projects'
 import localFont  from '@next/font/local'
 
 //not in mvp:
-//add pt version
 //use better photo
 // use next img
 //create detail project page

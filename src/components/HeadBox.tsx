@@ -1,8 +1,11 @@
 import Head from "next/head";
-import { description } from "./Hero/Hero";
+import { useTranslation } from "next-i18next";
 
 export function HeadBox() {
-    const headDescription = `Hello, My name is Gustavo. ${description}`
+
+    const { t } = useTranslation('hero')
+
+    const headDescription = `Hello, My name is Gustavo. ${t('description')}`
     const url = 'https://www.gustavosasaki.com/'
     const title = 'Gustavo Sasaki Portfolio'
     const img = 'https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/portfolioHeadImg.png'
