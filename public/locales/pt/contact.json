@@ -1,0 +1,23 @@
+{
+    "title":"Contato",
+    "description":{
+        "any-question":"Tem alguma dúvida?",
+        "interest-hiring":"Interessado em me contratar?",
+        "send-email":"Mande um email"
+    },
+    "form":{
+        "name":{
+            "title":"nome",
+            "placeholder":"João"
+        },
+        "message" : {
+            "title":"mensagem",
+            "placeholder":"Eu sou João"
+        },
+        "email" : {
+            "title":"email",
+            "placeholder":"algum_cara@email.com"
+        }
+    },
+    "button":"Envie Email"
+}

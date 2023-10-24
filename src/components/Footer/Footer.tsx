@@ -4,6 +4,7 @@ import { ResumeButton } from '../SocialMediaButton/ResumeButton';
 import { SocialMediaButton } from '../SocialMediaButton/SocialMediaButton';
 import { linkedinUrl, githubUrl } from '../SocialMediaButton/SocialMediaUrl';
 import { HomeButton } from '../NavBar/NavBar';
+import { useTranslation } from 'next-i18next';
 
 export function Footer() {
     return (
@@ -45,9 +46,12 @@ export function Footer() {
 
 
 function Copyright() {
+
+    const { t } = useTranslation('common')
+
     return (
         <p className="text-secondary-darker font-medium text-sm">
-            © 2023 | Design and build by Gustavo Roncaglia
+            {t('footer')}
         </p>
     )
 }

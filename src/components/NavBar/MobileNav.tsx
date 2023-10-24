@@ -1,6 +1,7 @@
 import { Fragment, MutableRefObject} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { scrollToPosition } from './scrollToPosition';
+import { useTranslation } from 'next-i18next';
 
 interface Input {
     contactRef: MutableRefObject<HTMLInputElement | null>,
@@ -11,6 +12,9 @@ interface Input {
 }
 
 export default function MobileNav({ open, setOpen,contactRef,aboutRef,projectsRef }: Input) {
+    
+    const { t } = useTranslation('nav')
+
     const scrollToPositionMobile : typeof scrollToPosition = (ref) => {
         setOpen(false)
         scrollToPosition(ref)
@@ -46,9 +50,9 @@ export default function MobileNav({ open, setOpen,contactRef,aboutRef,projectsRe
                                 <Dialog.Panel className="pointer-events-auto relative w-screen max-w-[16rem]">
                                     <div className="flex items-start pl-8 gap-4 h-full flex-col overflow-y-scroll bg-primary-lighter py-6 shadow-xl">
 
-                                            <LinkMobile onClick={() => scrollToPositionMobile(aboutRef)}><p>about</p></LinkMobile>
-                                            <LinkMobile onClick={() => scrollToPositionMobile(projectsRef)}><p>portfolio</p></LinkMobile>
-                                            <LinkMobile onClick={() => scrollToPositionMobile(contactRef)}><p>contact</p></LinkMobile>
+                                            <LinkMobile onClick={() => scrollToPositionMobile(aboutRef)}><p>{t('about')}</p></LinkMobile>
+                                            <LinkMobile onClick={() => scrollToPositionMobile(projectsRef)}><p>{t('portfolio')}</p></LinkMobile>
+                                            <LinkMobile onClick={() => scrollToPositionMobile(contactRef)}><p>{t('contact')}</p></LinkMobile>
 
                                     </div>
                                 </Dialog.Panel>

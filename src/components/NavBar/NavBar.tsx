@@ -4,6 +4,7 @@ import { MdMenu } from 'react-icons/md'
 import  MobileNav from './MobileNav';
 import { scrollToPosition } from './scrollToPosition';
 import useScrollDirection from './useScrollDirection';
+import { useTranslation } from 'next-i18next';
 
 interface NavRefs {
     contact: MutableRefObject<HTMLInputElement | null>,
@@ -13,6 +14,7 @@ interface NavRefs {
 export function NavBar({ contact: contactRef, about: aboutRef, projects: projectsRef }: NavRefs) {
     const scrollDirection = useScrollDirection();
     const [openMobile, setOpenMobile] = useState(false)
+    const { t } = useTranslation('nav')
 
     return (
 
@@ -33,9 +35,9 @@ export function NavBar({ contact: contactRef, about: aboutRef, projects: project
                 </button>
 
                 <div className='sm:flex justify-between items-center gap-3 hidden ml-auto'>
-                    <NavLink onClick={() => scrollToPosition(aboutRef)}><p>about</p></NavLink>
-                    <NavLink onClick={() => scrollToPosition(projectsRef)}><p>portfolio</p></NavLink>
-                    <NavLink onClick={() => scrollToPosition(contactRef)}><p>contact</p></NavLink>
+                    <NavLink onClick={() => scrollToPosition(aboutRef)}><p>{t('about')}</p></NavLink>
+                    <NavLink onClick={() => scrollToPosition(projectsRef)}><p>{t('portfolio')}</p></NavLink>
+                    <NavLink onClick={() => scrollToPosition(contactRef)}><p>{t('contact')}</p></NavLink>
                 </div>
             </nav>
         </header>

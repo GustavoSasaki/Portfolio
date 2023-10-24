@@ -1,10 +1,14 @@
-import { FormControl, TextField, ThemeProvider } from "@mui/material";
+import { TextField, ThemeProvider } from "@mui/material";
 import { forwardRef, RefObject, useRef, useState } from "react";
+import { useTranslation } from 'next-i18next'
 import { Underline } from "../Underline";
 import { muiTheme } from "./FormTheme";
 import { SendEmailButton } from "./SendEmailButton";
 
 const Contact = forwardRef((props, ref) => {
+
+    const { t } = useTranslation('contact')
+    
     const [name, setName] = useState<string>()
     const [email, setEmail] = useState<string>()
     const [message, setMessage] = useState<string>()
@@ -14,13 +18,14 @@ const Contact = forwardRef((props, ref) => {
 
     return (
         <section ref={ref as RefObject<HTMLDivElement>}  className="gu-container pb-10">
-            <Underline variant={"small"}><h6>Contact Me</h6></Underline>
+            <Underline variant={"small"}><h6>{t('title')}</h6></Underline>
 
             <p className="text-sm sm:text-base pt-1 pb-4">
-                Have any question?
-                Interested in hiring?
+                {t('description.any-question')}
+                {' '}
+                {t('description.interest-hiring')}
                 <br />
-                Send an e-mail
+                {t('description.send-email')}
             </p>
 
 
@@ -30,8 +35,8 @@ const Contact = forwardRef((props, ref) => {
                     <TextField
                         id="name"
                         label="name"
-                        inputProps={{ name: 'name' }}
-                        placeholder="John"
+                        inputProps={{ name: t('form.name.title') }}
+                        placeholder={t('form.name.placeholder')}
                         variant="filled"
                         fullWidth
                         error={nameError}
@@ -44,8 +49,8 @@ const Contact = forwardRef((props, ref) => {
                     <TextField
                         id="email"
                         label="email"
-                        inputProps={{ name: 'email' }}
-                        placeholder="some_guy@email.com"
+                        inputProps={{ name: t('form.email.title') }}
+                        placeholder={t('form.email.placeholder')}
                         variant="filled"
                         fullWidth
                         required
@@ -60,8 +65,8 @@ const Contact = forwardRef((props, ref) => {
                         multiline
                         minRows={4}
                         label="message"
-                        inputProps={{ name: 'message' }}
-                        placeholder="I am John"
+                        inputProps={{ name: t('form.message.title') }}
+                        placeholder={t('form.message.placeholder')}
                         variant="filled"
                         fullWidth
                         required
