@@ -1,0 +1,10 @@
+{
+    "title":"Sobre",
+    "introduction":"Como desenvolvedor, tenho interesse na criação de sites como um todo.\nDo design, front-end até o back-end.\nTudo isso para que os usuários tenha uma experiencia intuitiva e agradável",
+    "grad":{
+        "introduction": "Eu também sou um graduando recente de ",
+        "usp":"Universidade de São Paulo",
+        "rest":" 🎓 no curso de ciências da computação. E eu trabalhei por aproximadamente 1,5 anos na Amdocs."
+    },
+    "hobby":"Quando não estou trabalhando, eu provavelmente estou tentando cozinhar algo comestível, correndo ou vendo anime."
+}

@@ -1,7 +1,10 @@
+import { useTranslation } from 'next-i18next'
 import { MdSend } from 'react-icons/md'
 import { GoRightIcon } from '../GoRightIcon'
 
 export function SendEmailButton() {
+
+    const { t } = useTranslation('contact')
 
     return (
         <button type="submit"
@@ -12,7 +15,7 @@ export function SendEmailButton() {
             transition-all ease-out duration-300`}
         >
             <p className="text-lg font-bold transition-all ease-out duration-300 group-hover:mr-6">
-                Send Email
+                {t('button')}
             </p>
             <GoRightIcon>
                 <MdSend />

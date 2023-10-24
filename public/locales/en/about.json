@@ -1,0 +1,10 @@
+{
+    "title":"About",
+    "introduction":"As a developer, I am interested in the creation of websites as a whole.\nFrom design, front-end to back-end.\nEverything to create an intuitive and overall great user experience.",
+    "grad":{
+        "introduction":"I am also a recent graduate of ",
+        "usp":"University of São Paulo",
+        "rest":" 🎓 in bachelor of computer science.And worked approximately 1.5 years in Amdocs."
+    },
+    "hobby":"When not working, I am probably trying to make something edible, running or watching anime."
+}

@@ -2,8 +2,11 @@ import { forwardRef, RefObject } from "react";
 import { useTrackVisibility } from "react-intersection-observer-hook";
 import { useSlidInStyle } from "../useSlidInStyle";
 import { Underline } from "../Underline";
+import { useTranslation } from "next-i18next";
 
 const About = forwardRef((props, ref) => {
+
+    const { t } = useTranslation('about')
 
     const [observerRef, { wasEverVisible }] = useTrackVisibility();
     let slideWhenVisible = useSlidInStyle({ wasEverVisible, preStyle: " opacity-0 translate-y-[50px]" })
@@ -11,7 +14,11 @@ const About = forwardRef((props, ref) => {
     return (
         <section ref={ref as RefObject<HTMLDivElement>} className="gu-container pt-14 bg-primary-light pb-8">
             <div className="ml-4 sm:mb-8" >
-                <Underline variant="small"><h1>About</h1></Underline>
+                <Underline variant="small">
+                    <h1>
+                        {t('title')}
+                    </h1>
+                </Underline>
             </div>
 
             <div id='wew' className={"sm:flex sm:gap-8 "} >
@@ -24,20 +31,20 @@ const About = forwardRef((props, ref) => {
 
                 <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg">
                     <p>
-                        As a developer, I am interested in the creation of websites as a whole.
-                        From design, front-end to back-end.
-                        Everything to create an intuitive and overall great user experience.
+                        {t('introduction')}
                     </p>
 
                     <p>
                         <span>
-                            {"I am also a recent graduate of "}
+                            {t('grad.introduction')}
                         </span>
-                        <a href="https://www5.usp.br/">University of São Paulo</a> 🎓 in bachelor of computer science.
-                        And worked approximately 1,5 years in Amdocs.
+                        <a href="https://www5.usp.br/">
+                            {t('grad.usp')}
+                        </a>
+                        {t('grad.rest')}
                     </p>
                     <p ref={observerRef} >
-                        When not working, I am probably trying to make something edible, running or watching anime.
+                        {t('hobby')}
                     </p>
                 </div>
             </div>

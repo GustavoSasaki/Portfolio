@@ -1,10 +1,14 @@
 import { resumeUrl } from "./SocialMediaUrl";
+import { useTranslation } from "next-i18next";
 
 type Variant = 'hero' | 'footer'
 
 
 export function ResumeButton({variant} : {variant: Variant}) {
     const size = getSize(variant)
+
+    const { t } = useTranslation('common')
+
     return (
         <a href={resumeUrl} target="_blank" title="Resume"
             className="group transition duration-300 transform hover:scale-110 flex items-center"
@@ -16,7 +20,7 @@ export function ResumeButton({variant} : {variant: Variant}) {
                 <p className="text-accent font-medium sm:text-lg 
                     group-hover:text-secondary group-focus:text-secondary"
                 >
-                    Resume
+                    {t('resume')}
                 </p>
             </div>
         </a>
