@@ -1,27 +1,29 @@
-import { DiJava } from 'react-icons/di';
-import { DiNodejsSmall } from 'react-icons/di';
-import { DiPostgresql } from 'react-icons/di';
-import { DiReact } from 'react-icons/di';
+import { DiJava } from "react-icons/di";
+import { DiNodejsSmall } from "react-icons/di";
+import { DiPostgresql } from "react-icons/di";
+import { DiReact } from "react-icons/di";
 import { useTranslation } from "next-i18next";
 export function MainStack() {
+  const { t } = useTranslation("hero");
 
-    const { t } = useTranslation('hero')
-
-    return (
-        <section className={`-mt-[68px] max-w-[min(600px,_calc(100%_-_32px))] mx-auto`}>
-            <h1 className="text-base font-bold text-secondary-dark pl-2">{t('main-stack')}</h1>
-            <div className=" bg-primary-lighter rounded-xl  block px-4 py-1 border-secondary-700 border-b-2">
-                <div className='flex justify-around items-center'>
-
-                    <DiReact className={className} />
-                    <DiNodejsSmall className={className} />
-                    <DiJava className={className} />
-                    <DiPostgresql className={className} />
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section
+      className={`-mt-[68px] max-w-[min(600px,_calc(100%_-_32px))] mx-auto`}
+    >
+      <h1 className="text-base font-bold text-secondary-dark pl-2">
+        {t("main-stack")}
+      </h1>
+      <div className=" bg-primary-lighter rounded-xl  block px-4 py-1 border-secondary-700 border-b-2">
+        <div className="flex justify-around items-center">
+          <DiReact className={className} />
+          <DiNodejsSmall className={className} />
+          <DiJava className={className} />
+          <DiPostgresql className={className} />
+        </div>
+      </div>
+    </section>
+  );
 }
 
 //icon className
-const className = "text-secondary h-20 w-20"
+const className = "text-secondary h-20 w-20";

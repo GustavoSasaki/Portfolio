@@ -1,23 +1,23 @@
 {
-    "title":"Contact Me",
-    "description":{
-        "any-question":"Have any question?",
-        "interest-hiring":"Interested in hiring?",
-        "send-email":"Send an e-mail."
+  "title": "Contact Me",
+  "description": {
+    "any-question": "Have any question?",
+    "interest-hiring": "Interested in hiring?",
+    "send-email": "Send an e-mail."
+  },
+  "form": {
+    "name": {
+      "title": "name",
+      "placeholder": "John"
     },
-    "form":{
-        "name":{
-            "title":"name",
-            "placeholder":"John"
-        },
-        "message" : {
-            "title":"message",
-            "placeholder":"I am John"
-        },
-        "email" : {
-            "title":"email",
-            "placeholder":"some_guy@email.com"
-        }
+    "message": {
+      "title": "message",
+      "placeholder": "I am John"
     },
-    "button":"Send Email"
+    "email": {
+      "title": "email",
+      "placeholder": "some_guy@email.com"
+    }
+  },
+  "button": "Send Email"
 }

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 export default function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = useState<'down' | 'up' | null>(null);
+  const [scrollDirection, setScrollDirection] = useState<"down" | "up" | null>(
+    null,
+  );
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -9,7 +11,10 @@ export default function useScrollDirection() {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? "down" : "up";
-      if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+      ) {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -17,8 +22,8 @@ export default function useScrollDirection() {
     window.addEventListener("scroll", updateScrollDirection); // add event listener
     return () => {
       window.removeEventListener("scroll", updateScrollDirection); // clean up
-    }
+    };
   }, [scrollDirection]);
 
   return scrollDirection;
-};
+}

@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @media (prefers-color-scheme: dark) {
 }
-
 
 @layer components {
   .gu-container {
     padding-left: 12px;
     padding-right: 12px;
-    width: min(100%,900px);
+    width: min(100%, 900px);
     margin-left: auto;
     margin-right: auto;
   }
