@@ -19,6 +19,13 @@
     "other-tasks": "I also created a bash tool for converting GitLab commits to ClearCase. Greatly improving the velocity of building new releases.",
     "view-button": "View it Here"
   },
+  "cookies": {
+    "title": "Whimsy Cookie Workshop",
+    "subtitle": "The Handmaid Cookies of Sanca",
+    "introduction": "An one page website for a cookie restaurant. The entire website was design with an cool vibe. It was utilized a lot of smooth animation with Framer Motion and an multi-color pallete.",
+    "view-button": "View it Here",
+    "git-button": "Code"
+  },
   "hero-ai": {
     "title": "Hero Creation AI",
     "subtitle": "Create your Super Hero with just one click ",

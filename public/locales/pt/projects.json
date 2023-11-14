@@ -19,12 +19,20 @@
     "other-tasks": "Além disso, criei uma série de comandos bash para converter commits do GitLab para ClearCase. Aumentando drasticamente a velocidade de build de novas releases.",
     "view-button": "Entre no site"
   },
+  "cookies": {
+    "title": "Whimsy Cookie Workshop",
+    "subtitle": "Os Cookies Artesanais de Sanca",
+    "introduction": "Website para um restaurante de cookies. O site inteiro foi construido para ter uma vibe de 'cool/hippie'. Foi utilizado várias animações suaves do Framer Motion e uma paleta de cores multi-colorida.",
+    "view-button": "Entre no site",
+    "git-button": "Código"
+  },
   "hero-ai": {
     "title": "Criação de herois AI",
     "subtitle": "Crie seu super-herói com apenas um clique",
     "description": "Neste site você consegue criar rapidamente um novo herói com imagem de perfil e backstory geradas por IA.\n O projeto foi utilizado para polir minhas habilidades de front-end e design.",
     "challenges": "Um dos desafios encontrados foi a demora excessina na geração de conteúdo pela IA. Para resolver isso:",
     "paralalized": "Foi paralizado a geração de backstory e a geração de imagem.",
-    "loading-bar": "Foi incorporado uma spinning wheel e uma barra de loading. Melhorando o feed-back ao usuário"
+    "loading-bar": "Foi incorporado uma spinning wheel e uma barra de loading. Melhorando o feed-back ao usuário",
+    "view-button": "Entre no site"
   }
 }

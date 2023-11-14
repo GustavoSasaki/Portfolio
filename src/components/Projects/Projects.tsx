@@ -97,6 +97,39 @@ const getProjects = (t: TFunction) => {
       ),
     },
     {
+      img: "https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/cookies.png",
+      title: t("cookies.title"),
+      stack: [
+        "NextJS",
+        "React",
+        "TailwindCSS",
+        "Typescript",
+        "Framer Motion",
+      ],
+      internalUrl: ".",
+      externalUrl: "https://whimsy-cookie-workshop.vercel.app/",
+      projectLinks: [
+        {
+          url: "https://whimsy-cookie-workshop.vercel.app/",
+          name: t("cookies.view-button"),
+          icon: <FiExternalLink />,
+        },
+        {
+          url: "https://github.com/GustavoSasaki/Whimsy-Cookie-Workshop",
+          name: t("cookies.git-button"),
+          icon: <FiExternalLink />,
+        },
+      ],
+      description: (
+        <>
+          <p className=" text-xl">
+            <strong>{t("cookies.subtitle")} </strong>
+          </p>
+          <p>{t("cookies.introduction")}</p>
+        </>
+      ),
+    },
+    {
       img: "https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/heroCreationAI.png",
       title: t("hero-ai.title"),
       stack: [

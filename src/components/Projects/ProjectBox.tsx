@@ -69,7 +69,7 @@ export function ProjectBox({
         />
       </a>
 
-      <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech] justify-center sm:justify-start ">
+      <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech] justify-center sm:justify-start items-start">
         {stack.map((stackName) => {
           return (
             <p
