@@ -13,21 +13,19 @@
     "view-button": "View it Here"
   },
   "amdocs": {
-    "title": "Creation of telephony packages",
-    "introduction": "While working in Amdocs, I participate in the development of an web tool for creation telephony packages to Oi Company.",
-    "main-task": "I was the main back-end developer in the team. So I mostly worked on the spring boot java server and the oracleSQL database. But sometimes, I helped in the implementation of new pages with HTML/jQuery.",
+    "title": "Fullstack Developer Amdocs",
+    "introduction": "While in Amdocs, I participate as a fullstack developer in the development of an web tool for creation telephony packages to Oi Company.",
+    "main-task": "I contributed to the improviment of the Spring Boot Java server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
     "other-tasks": "I also created a bash tool for converting GitLab commits to ClearCase. Greatly improving the velocity of building new releases.",
     "view-button": "View it Here"
   },
   "hero-ai": {
     "title": "Hero Creation AI",
     "subtitle": "Create your Super Hero with just one click ",
-    "description": "In this website you can quickly create a new hero with AI generated image and backstory.\nThe project was utilized to improve my front-end and design skills.",
-    "challenges": "One challenge that I faced was that AI generation was taking too much time. To resolve this:",
-    "paralalized": "I parallelize the backstory and image generation.",
-    "loading-bar": "I added a spinning wheel and loading bar.",
-    "according": "According to ",
-    "irene": ", after 5 seconds of waiting you have to show the user that the system is progressing and not just stuck.",
+    "description": "In this website you can quickly create a new hero with AI generated image and backstory.\nThe project was utilized to polish my front-end and design skills.",
+    "challenges": "I encountered a significant challenge related to the time-consuming nature of AI generation. To address this issue, I implemented the following measures:",
+    "paralalized": "Parallelizing the backstory and image generation processes.",
+    "loading-bar": "Incorporating a spinning wheel and loading bar to enhance user experience and provide real-time feedback.",
     "view-button": "View it Here"
   }
 }

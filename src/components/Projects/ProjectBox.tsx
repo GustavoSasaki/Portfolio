@@ -26,7 +26,6 @@ export function ProjectBox({
   title,
   description,
   stack,
-  internalUrl,
   externalUrl,
   projectLinks,
   index,

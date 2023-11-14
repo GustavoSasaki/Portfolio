@@ -11,7 +11,8 @@ import Contact from "@/components/Contact/Contact";
 import Projects from "@/components/Projects/Projects";
 import localFont from "@next/font/local";
 
-//not in mvp:
+//to-do:
+//not mvp
 //use better photo
 // use next img
 //create detail project page

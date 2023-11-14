@@ -13,21 +13,18 @@
     "view-button": "Entre no site"
   },
   "amdocs": {
-    "title": "Criação de pacotes de telefonia",
-    "introduction": "Enquanto trabalho na Amdocs, participei do desenvolvimento de uma ferramenta web para criação de pacotes de telefonia para a Empresa Oi.",
-    "main-task": "Fui o principal desenvolvedor back-end da equipe. Então, trabalhei principalmente no servidor Java Spring Boot e no banco de dados OracleSQL. Mas às vezes ajudei na implementação de novas páginas com HTML/jQuery.",
-    "other-tasks": "Também criei uma série de comandos bash para converter commits do GitLab para ClearCase. Aumentando drasticamente a velocidade de build de novas releases.",
+    "title": "Desenvolvedor Fullstack Amdocs",
+    "introduction": "Na Amdocs, participei como desenvolvedor fullstack do desenvolvimento de uma ferramenta web para criação de pacotes de telefonia para a Empresa Oi.",
+    "main-task": "Eu contribui para a melhoria do servidor Java Spring Boot, eu construi requests para o banco de dados OracleSQL com PL/SQL e construi novas páginas com HTML/jQuery.",
+    "other-tasks": "Além disso, criei uma série de comandos bash para converter commits do GitLab para ClearCase. Aumentando drasticamente a velocidade de build de novas releases.",
     "view-button": "Entre no site"
   },
   "hero-ai": {
     "title": "Criação de herois AI",
     "subtitle": "Crie seu super-herói com apenas um clique",
-    "description": "Neste site você consegue criar rapidamente um novo herói com imagem de perfil e backstory geradas por IA.\n O projeto foi utilizado para melhorar minhas habilidades de front-end e design.",
-    "challenges": "Um dos desafios que enfrentei foi que a geração de IA estava demorando muito. Para resolver isso:",
-    "paralalized": "Eu paralelizei a geração de backstory e a geração de imagem.",
-    "loading-bar": "Eu adicionei uma spinning wheel e uma barra de loading.",
-    "according": "De acordo com ",
-    "irene": ", após 5 segundos de espera você tem que mostrar ao usuário que o sistema está progredindo e não apenas travado.",
-    "view-button": "Entre no site"
+    "description": "Neste site você consegue criar rapidamente um novo herói com imagem de perfil e backstory geradas por IA.\n O projeto foi utilizado para polir minhas habilidades de front-end e design.",
+    "challenges": "Um dos desafios encontrados foi a demora excessina na geração de conteúdo pela IA. Para resolver isso:",
+    "paralalized": "Foi paralizado a geração de backstory e a geração de imagem.",
+    "loading-bar": "Foi incorporado uma spinning wheel e uma barra de loading. Melhorando o feed-back ao usuário"
   }
 }

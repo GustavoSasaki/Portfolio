@@ -128,13 +128,6 @@ const getProjects = (t: TFunction) => {
             <li>{t("hero-ai.paralalized")}</li>
             <li>{t("hero-ai.loading-bar")}</li>
           </ul>
-          <p>
-            {t("hero-ai.according")}
-            <a href="https://www.goodreads.com/en/book/show/61398962">
-              Irene Pereyra
-            </a>
-            {t("hero-ai.irene")}
-          </p>
         </>
       ),
     },
