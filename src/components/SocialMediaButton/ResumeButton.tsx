@@ -21,7 +21,7 @@ export function ResumeButton({ variant }: { variant: Variant }) {
                 group-hover:bg-accent-600  group-focus:bg-accent-600`}
       >
         <p
-          className="text-accent font-medium sm:text-lg 
+          className="text-accent font-medium sm:text-xl
                     group-hover:text-secondary group-focus:text-secondary"
         >
           {t("resume")}

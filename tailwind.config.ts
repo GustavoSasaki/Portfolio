@@ -21,7 +21,7 @@ export default module.exports = {
         accent: {
           200: "#8cedb1",
           400: "#3BBA6C",
-          DEFAULT: "#319B5A",
+          DEFAULT: "#2aa359",
           600: "#277C48",
         },
       },

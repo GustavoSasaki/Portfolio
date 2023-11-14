@@ -14,7 +14,7 @@ export function SendEmailButton() {
             hover:pl-3
             transition-all ease-out duration-300`}
     >
-      <p className="text-lg font-bold transition-all ease-out duration-300 group-hover:mr-6">
+      <p className="text-xl font-bold transition-all ease-out duration-300 group-hover:mr-6">
         {t("button")}
       </p>
       <GoRightIcon>
