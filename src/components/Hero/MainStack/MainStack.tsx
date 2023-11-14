@@ -9,6 +9,7 @@ export function MainStack() {
   return (
     <section
       className={`-mt-[68px] max-w-[min(600px,_calc(100%_-_32px))] mx-auto`}
+      aria-hidden={true}
     >
       <h2 className="text-base font-bold text-secondary-dark pl-2">
         {t("main-stack")}

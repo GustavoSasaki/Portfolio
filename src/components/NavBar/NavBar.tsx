@@ -81,7 +81,9 @@ function NavLink({
 
 export function HomeButton() {
   return (
-    <a href="." className="text-xl font-semibold ">
+    <a href="." className="text-xl font-semibold "
+      aria-label="Gustavo Sasaki"
+    >
       <span className="z-20 relative">Gus</span>
       <span
         className={`text-accent-400 font-bold text-3xl mx-[-10px] z-10 relative ${japFont.className} `}
