@@ -20,7 +20,7 @@ const About = forwardRef((props, ref) => {
     >
       <div className="ml-4 sm:mb-8">
         <Underline variant="small">
-          <h1>{t("title")}</h1>
+          <h2>{t("title")}</h2>
         </Underline>
       </div>
 

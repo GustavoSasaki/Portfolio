@@ -21,7 +21,7 @@ const Contact = forwardRef((props, ref) => {
       className="gu-container pb-10"
     >
       <Underline variant={"small"}>
-        <h6>{t("title")}</h6>
+        <h2>{t("title")}</h2>
       </Underline>
 
       <p className="text-sm sm:text-base pt-1 pb-4">

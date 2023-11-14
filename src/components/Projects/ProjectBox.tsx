@@ -85,7 +85,7 @@ export function ProjectBox({
 
       <div className="ml-4 mb-4 sm:mb-3 [grid-area:_title]">
         <Underline variant="smaller">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </Underline>
       </div>
 

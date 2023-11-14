@@ -18,6 +18,7 @@ export function Hero({ variant }: Variants) {
         backgroundImage:
           "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg,
       }}
+      aria-label={"Gustavo Sasaki"}
     >
       <div className="gu-container">
         <div className="mx-4">
@@ -27,7 +28,7 @@ export function Hero({ variant }: Variants) {
             </p>
             <div className="text-4xl sm:text-5xl font-bold">
               <h1 className="inline">Gustavo </h1>
-              <span>|</span>
+              <span aria-hidden={true}>|</span>
               <br />
               <div className="pb-2" />
               <Underline variant="big">

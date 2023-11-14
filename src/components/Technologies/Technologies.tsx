@@ -26,7 +26,7 @@ export function Technologies() {
     <section className="gu-container pt-8 mb-12 max-w-full overflow-hidden">
       <div className="ml-4 mb-5">
         <Underline variant="small">
-          <h1>{t("technologies")}</h1>
+          <h2>{t("technologies")}</h2>
         </Underline>
       </div>
 
