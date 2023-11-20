@@ -46,7 +46,7 @@ const getProjects = (t: TFunction) => {
       projectLinks: [
         {
           url: "https://gamehongo.com/",
-          name: t("view-button"),
+          name: t("gamehongo.view-button"),
           icon: <FiExternalLink />,
         },
       ],
@@ -84,7 +84,7 @@ const getProjects = (t: TFunction) => {
       projectLinks: [
         {
           url: "https://www.amdocs.com/",
-          name: t("view-button"),
+          name: t("amdocs.view-button"),
           icon: <FiExternalLink />,
         },
       ],
@@ -146,7 +146,7 @@ const getProjects = (t: TFunction) => {
       projectLinks: [
         {
           url: "https://hero-front-end.vercel.app/",
-          name: t("view-button"),
+          name: t("hero-ai.view-button"),
           icon: <FiExternalLink />,
         },
       ],

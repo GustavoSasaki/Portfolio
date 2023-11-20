@@ -4,6 +4,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { useTrackVisibility } from "react-intersection-observer-hook";
 import { useSlidInStyle } from "../useSlidInStyle";
 import { useTranslation } from "next-i18next";
+import { useState } from "react";
+import Image from 'next/image'
+
 
 export interface ProjectLink {
   url: string;
@@ -62,11 +65,15 @@ export function ProjectBox({
           <span className="font-bold text-xl pr-1">{t("see-website")}</span>
           <FiExternalLink className="font-bold text-xl" />
         </div>
-        <img
-          className="w-full h-full group-hover:scale-110 transition duration-500 object-cover"
-          src={img}
-          alt={title}
-        />
+        <div className="relative w-full h-full group-hover:scale-110 transition duration-500">
+          <Image
+            className="object-cover"
+            fill={true}
+            sizes="(max-width: 768px) 288px, 320px"
+            src={img}
+            alt={title}
+          />
+        </div>
       </a>
 
       <div className="flex flex-wrap gap-2 pb-4 [grid-area:_tech] justify-center sm:justify-start items-start">

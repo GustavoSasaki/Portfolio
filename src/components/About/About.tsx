@@ -3,6 +3,7 @@ import { useTrackVisibility } from "react-intersection-observer-hook";
 import { useSlidInStyle } from "../useSlidInStyle";
 import { Underline } from "../Underline";
 import { useTranslation } from "next-i18next";
+import Image from 'next/image'
 
 const About = forwardRef((props, ref) => {
   const { t } = useTranslation("about");
@@ -24,19 +25,22 @@ const About = forwardRef((props, ref) => {
         </Underline>
       </div>
 
-      <div id="wew" className={"sm:flex sm:gap-8 "}>
-        <div className=" bg-gradient-to-tr from-accent-200 to-purple-300 rounded-3xl relative max-w-[250px] w-[1/4]  mx-auto my-7">
-          <img
-            alt="Gustavo Roncaglia"
-            src="https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/photo"
-            className={
-              "w-full rounded-lg mix-blend-darken object-cover" +
-              slideWhenVisible
-            }
-          />
+      <div className={"sm:flex sm:gap-8"}>
+        <div className="h-[322px] bg-gradient-to-tr from-accent-200 to-purple-300 rounded-lg relative max-w-[250px]  flex-[0_0_25%] mx-auto my-7">
+            <Image
+              alt="Gustavo Sasaki Roncaglia"
+              src="https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/photo"
+              fill={true}
+              sizes="(max-width: 640px) 250px, (max-width: 1048px) 25vw, 250px"
+              className={
+                "object-cover rounded-lg mix-blend-darken" +
+                slideWhenVisible
+              }
+            />
+
         </div>
 
-        <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg">
+        <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg flex-[1_0_0]">
           <p>{t("introduction")}</p>
 
           <p>

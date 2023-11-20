@@ -14,7 +14,6 @@ import localFont from "@next/font/local";
 //to-do:
 //not mvp
 //use better photo
-// use next img
 //create detail project page
 //add indicador no menu da sessaoa atual
 //fix menu dando blend in na sessao do about
@@ -22,6 +21,7 @@ import localFont from "@next/font/local";
 //put sub-title in about
 //make up button on footer mobile, go up instead of being an A
 // menu mobile, change icon to X when open
+//começar a usar framer motion
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
