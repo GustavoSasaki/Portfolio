@@ -4,21 +4,25 @@ import { MdMenu } from "react-icons/md";
 import MobileNav from "./MobileNav";
 import { scrollToPosition } from "./scrollToPosition";
 import useScrollDirection from "./useScrollDirection";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";import { useInView } from "framer-motion";
+import { useSectionView } from "@/hooks/useSectionView";
 
-interface NavRefs {
-  contact: MutableRefObject<HTMLInputElement | null>;
-  about: MutableRefObject<HTMLInputElement | null>;
-  projects: MutableRefObject<HTMLInputElement | null>;
+export interface NavRefs {
+  heroRef: MutableRefObject<HTMLInputElement | null>;
+  contactRef: MutableRefObject<HTMLInputElement | null>;
+  aboutRef: MutableRefObject<HTMLInputElement | null>;
+  projectsRef: MutableRefObject<HTMLInputElement | null>;
 }
 export function NavBar({
-  contact: contactRef,
-  about: aboutRef,
-  projects: projectsRef,
+  heroRef,
+  contactRef,
+  aboutRef,
+  projectsRef,
 }: NavRefs) {
   const scrollDirection = useScrollDirection();
   const [openMobile, setOpenMobile] = useState(false);
   const { t } = useTranslation("nav");
+  const viewSection = useSectionView({heroRef,contactRef,aboutRef,projectsRef})
 
   return (
     <header
@@ -47,13 +51,13 @@ export function NavBar({
         </button>
 
         <div className="sm:flex justify-between items-center gap-3 hidden ml-auto">
-          <NavLink onClick={() => scrollToPosition(aboutRef)}>
+          <NavLink sectionRef={aboutRef} inView={viewSection === 'about'}>
             <p>{t("about")}</p>
           </NavLink>
-          <NavLink onClick={() => scrollToPosition(projectsRef)}>
+          <NavLink sectionRef={projectsRef} inView={viewSection === 'projects'}>
             <p>{t("portfolio")}</p>
           </NavLink>
-          <NavLink onClick={() => scrollToPosition(contactRef)}>
+          <NavLink sectionRef={contactRef} inView={viewSection === 'contact'}>
             <p>{t("contact")}</p>
           </NavLink>
         </div>
@@ -64,15 +68,19 @@ export function NavBar({
 
 function NavLink({
   children,
-  onClick,
+  inView,
+  sectionRef,
 }: {
   children: JSX.Element[] | JSX.Element;
-  onClick: () => void;
+  inView:boolean
+  sectionRef:  MutableRefObject<HTMLInputElement | null>
 }) {
+  const handleClick=() => scrollToPosition(sectionRef)
+
   return (
     <button
-      onClick={onClick}
-      className="capitalize text-base font-semibold hover:text-accent-400"
+      onClick={handleClick}
+      className={`capitalize text-base font-semibold hover:text-accent-400 ${inView ? 'text-accent-400' : ''} `}
     >
       {children}
     </button>
@@ -96,7 +104,7 @@ export function HomeButton() {
       >
         木
       </span>
-      <span className="z-20 relative">avo Sasaki</span>
+      <span className="z-20 relative ">avo Sasaki</span>
     </a>
   );
 }
