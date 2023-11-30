@@ -39,6 +39,7 @@ export function NavBar({
           contactRef={contactRef}
           aboutRef={aboutRef}
           projectsRef={projectsRef}
+          heroRef={heroRef}
         />
 
         <button

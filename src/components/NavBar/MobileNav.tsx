@@ -2,11 +2,13 @@ import { Fragment, MutableRefObject } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { scrollToPosition } from "./scrollToPosition";
 import { useTranslation } from "next-i18next";
+import { useSectionView } from "@/hooks/useSectionView";
 
 interface Input {
   contactRef: MutableRefObject<HTMLInputElement | null>;
   aboutRef: MutableRefObject<HTMLInputElement | null>;
   projectsRef: MutableRefObject<HTMLInputElement | null>;
+  heroRef: MutableRefObject<HTMLInputElement | null>;
   open: boolean;
   setOpen: (input: boolean) => void;
 }
@@ -17,8 +19,15 @@ export default function MobileNav({
   contactRef,
   aboutRef,
   projectsRef,
+  heroRef
 }: Input) {
   const { t } = useTranslation("nav");
+  const sectionView = useSectionView({
+    contactRef,
+    aboutRef,
+    projectsRef,
+    heroRef
+  })
 
   const scrollToPositionMobile: typeof scrollToPosition = (ref) => {
     setOpen(false);
@@ -55,17 +64,20 @@ export default function MobileNav({
                 <Dialog.Panel className="pointer-events-auto relative w-screen max-w-[16rem]">
                   <div className="flex items-start pl-8 gap-4 h-full flex-col overflow-y-scroll bg-primary-lighter py-6 shadow-xl">
                     <LinkMobile
-                      onClick={() => scrollToPositionMobile(aboutRef)}
+                      sectionRef={aboutRef}
+                      inView={sectionView === 'about'}
                     >
                       <p>{t("about")}</p>
                     </LinkMobile>
                     <LinkMobile
-                      onClick={() => scrollToPositionMobile(projectsRef)}
+                      sectionRef={projectsRef}
+                      inView={sectionView === 'projects'}
                     >
                       <p>{t("portfolio")}</p>
                     </LinkMobile>
                     <LinkMobile
-                      onClick={() => scrollToPositionMobile(contactRef)}
+                      sectionRef={contactRef}
+                      inView={sectionView === 'contact'}
                     >
                       <p>{t("contact")}</p>
                     </LinkMobile>
@@ -82,15 +94,19 @@ export default function MobileNav({
 
 function LinkMobile({
   children,
-  onClick,
+  inView,
+  sectionRef,
 }: {
   children: JSX.Element[] | JSX.Element;
-  onClick: () => void;
+  inView: boolean
+  sectionRef: MutableRefObject<HTMLInputElement | null>
 }) {
+  const handleClick = () => scrollToPosition(sectionRef)
+
   return (
     <button
-      onClick={onClick}
-      className="capitalize text-2xl text-secondary font-semibold"
+      onClick={handleClick}
+      className={`capitalize text-2xl font-semibold ${inView ? 'text-accent-400' : 'text-secondary'}`}
     >
       {children}
     </button>
