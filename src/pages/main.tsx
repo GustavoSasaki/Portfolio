@@ -17,11 +17,11 @@ import localFont from "@next/font/local";
 //create detail project page
 //add indicador no menu da sessaoa atual
 //fix menu dando blend in na sessao do about
-//fix triangle not in center in go home button footer
 //put sub-title in about
-//make up button on footer mobile, go up instead of being an A
 // menu mobile, change icon to X when open
 //começar a usar framer motion
+//maybe more storytelling?
+//read book about portfolio
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
@@ -61,5 +61,3 @@ export default function Home() {
     </>
   );
 }
-
-//linear-gradient(to top,transparent 10%,#FFF) top,

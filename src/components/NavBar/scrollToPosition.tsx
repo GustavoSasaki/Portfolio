@@ -1,5 +1,6 @@
 import { MutableRefObject } from "react";
 import { getPrefersReducedMotion } from "./getPrefersReducedMotion";
+import { isMobile } from 'react-device-detect';
 
 export const scrollToPosition = (
   ref?: MutableRefObject<HTMLInputElement | null>,
@@ -14,9 +15,13 @@ export const scrollToPosition = (
 };
 
 export const scrollToHome = () => {
-  const reduceMotion = getPrefersReducedMotion();
-  window.scrollTo({
-    behavior: !reduceMotion ? "smooth" : undefined,
-    top: 0,
-  });
+  if (isMobile) {
+    const reduceMotion = getPrefersReducedMotion();
+    window.scrollTo({
+      behavior: !reduceMotion ? "smooth" : undefined,
+      top: 0,
+    });
+  }else{
+    location.reload()
+  }
 };

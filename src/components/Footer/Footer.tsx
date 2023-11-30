@@ -5,13 +5,14 @@ import { SocialMediaButton } from "../SocialMediaButton/SocialMediaButton";
 import { linkedinUrl, githubUrl } from "../SocialMediaButton/SocialMediaUrl";
 import { HomeButton } from "../NavBar/NavBar";
 import { useTranslation } from "next-i18next";
+import { scrollToHome } from "../NavBar/scrollToPosition";
 
 export function Footer() {
   return (
     <footer className=" h-min-6 bg-primary-light pt-4 pb-3">
       <div className="flex justify-between items-center gap-1 gu-container">
-        <a
-          href="."
+        <button
+          onClick={scrollToHome}
           className="h-[70px] w-[70px] bg-accent-400 rounded-full group md:hidden mb-2 flex justify-center items-center"
           title="Home"
         >
@@ -19,7 +20,7 @@ export function Footer() {
             className="h-[40px] w-[40px]  text-secondary
                         transition-all duration-200 hover:duration-300 linear group-hover:-translate-y-1"
           />
-        </a>
+        </button>
         <div className=" hidden md:flex items-center">
           <HomeButton />
         </div>

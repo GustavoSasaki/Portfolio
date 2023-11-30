@@ -100,5 +100,3 @@ export function HomeButton() {
     </a>
   );
 }
-
-//export const openResume = () => window.open(resumeUrl, "_blank", "noreferrer")
