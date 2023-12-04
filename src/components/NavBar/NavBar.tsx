@@ -1,11 +1,11 @@
 import { japFont } from "@/pages";
 import { MutableRefObject, useState } from "react";
-import { MdMenu } from "react-icons/md";
 import MobileNav from "./MobileNav";
 import { scrollToPosition } from "./scrollToPosition";
 import useScrollDirection from "./useScrollDirection";
-import { useTranslation } from "next-i18next";import { useInView } from "framer-motion";
+import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
+import Hamburger from 'hamburger-react'
 
 export interface NavRefs {
   heroRef: MutableRefObject<HTMLInputElement | null>;
@@ -22,13 +22,12 @@ export function NavBar({
   const scrollDirection = useScrollDirection();
   const [openMobile, setOpenMobile] = useState(false);
   const { t } = useTranslation("nav");
-  const viewSection = useSectionView({heroRef,contactRef,aboutRef,projectsRef})
+  const viewSection = useSectionView({ heroRef, contactRef, aboutRef, projectsRef })
 
   return (
     <header
-      className={`sticky ${
-        scrollDirection === "down" ? "-top-14" : "top-0"
-      } transition-all duration-1000  
+      className={`sticky ${scrollDirection === "down" ? "-top-14" : "top-0"
+        } transition-all duration-1000  
             z-40 w-full h-14 bg-primary-light flex items-center shadow`}
     >
       <nav className="flex justify-between items-center gu-container text-secondary ">
@@ -42,14 +41,14 @@ export function NavBar({
           heroRef={heroRef}
         />
 
-        <button
-          className={`sm:hidden relative z-20 ${
-            openMobile ? "text-accent-400" : ""
-          }`}
-          onClick={() => setOpenMobile(!openMobile)}
-        >
-          <MdMenu className="ml-auto w-7 h-7" />
-        </button>
+
+        <div
+          className={`sm:hidden relative z-20 ${openMobile ? "text-accent-400" : ""
+            }`}>
+          <Hamburger toggled={openMobile} toggle={setOpenMobile} />
+
+
+        </div>
 
         <div className="sm:flex justify-between items-center gap-3 hidden ml-auto">
           <NavLink sectionRef={aboutRef} inView={viewSection === 'about'}>
@@ -73,10 +72,10 @@ function NavLink({
   sectionRef,
 }: {
   children: JSX.Element[] | JSX.Element;
-  inView:boolean
-  sectionRef:  MutableRefObject<HTMLInputElement | null>
+  inView: boolean
+  sectionRef: MutableRefObject<HTMLInputElement | null>
 }) {
-  const handleClick=() => scrollToPosition(sectionRef)
+  const handleClick = () => scrollToPosition(sectionRef)
 
   return (
     <button

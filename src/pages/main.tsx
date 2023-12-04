@@ -17,7 +17,6 @@ import Hero from "@/components/Hero/Hero";
 //create detail project page
 //fix menu dando blend in na sessao do about
 //put sub-title in about
-// menu mobile, change icon to X when open
 //começar a usar framer motion
 //maybe more storytelling?
 //read book about portfolio
