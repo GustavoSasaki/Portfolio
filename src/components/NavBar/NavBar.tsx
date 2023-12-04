@@ -28,7 +28,9 @@ export function NavBar({
     <header
       className={`sticky ${scrollDirection === "down" ? "-top-14" : "top-0"
         } transition-all duration-1000  
-            z-40 w-full h-14 bg-primary-light flex items-center shadow`}
+            z-40 w-full h-14 
+            ${viewSection !== 'about'?'bg-primary-light' : 'bg-[#151311]'} 
+            flex items-center shadow-2xl`}
     >
       <nav className="flex justify-between items-center gu-container text-secondary ">
         <HomeButton />

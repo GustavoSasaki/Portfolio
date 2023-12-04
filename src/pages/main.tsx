@@ -15,7 +15,6 @@ import Hero from "@/components/Hero/Hero";
 //not mvp
 //use better photo
 //create detail project page
-//fix menu dando blend in na sessao do about
 //put sub-title in about
 //começar a usar framer motion
 //maybe more storytelling?
