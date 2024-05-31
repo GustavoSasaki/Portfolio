@@ -21,7 +21,7 @@ const Hero = forwardRef<HTMLDivElement, React.PropsWithChildren<Variants>>((prop
       id="hero"
       style={{
         backgroundImage:
-          "linear-gradient(to bottom, transparent,50%,#0c0a09) ," + bgImg,
+          "linear-gradient(to bottom, transparent,45%,#0c0a09) ," + bgImg,
       }}
       aria-label={"Gustavo Sasaki"}
       ref={ref as RefObject<HTMLDivElement>}

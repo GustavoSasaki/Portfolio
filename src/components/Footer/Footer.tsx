@@ -8,7 +8,7 @@ import { useTranslation } from "next-i18next";
 
 export function Footer() {
   return (
-    <footer className=" h-min-6 bg-primary-light pt-4 pb-3  border-t-[1px] border-primary-lighter">
+    <footer className=" h-min-6 bg-primary pt-4 pb-3  border-t-[1px] border-primary-lighter">
       <div className="flex justify-between items-center gap-1 gu-container">
         <a
           href="#hero"

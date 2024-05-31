@@ -20,7 +20,7 @@ export const japFont = localFont({
 });
 
 export default function Home() {
-  const navRefs : NavRefs= {
+  const navRefs: NavRefs = {
     contactRef: useRef(null),
     aboutRef: useRef(null),
     projectsRef: useRef(null),
@@ -43,8 +43,10 @@ export default function Home() {
             <About ref={navRefs.aboutRef} />
           </div>
           <Technologies />
-          <Projects ref={navRefs.projectsRef} />
-          <Contact ref={navRefs.contactRef} />
+          <div className="from-primary bg-gradient-to-b to-primary-light">
+            <Projects ref={navRefs.projectsRef} />
+            <Contact ref={navRefs.contactRef} />
+          </div>
         </main>
 
         <Footer />
