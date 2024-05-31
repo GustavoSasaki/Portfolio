@@ -1,6 +1,5 @@
 import { Fragment, MutableRefObject } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { scrollToPosition } from "./scrollToPosition";
 import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
 
@@ -28,11 +27,6 @@ export default function MobileNav({
     projectsRef,
     heroRef
   })
-
-  const scrollToPositionMobile: typeof scrollToPosition = (ref) => {
-    setOpen(false);
-    scrollToPosition(ref);
-  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -64,22 +58,28 @@ export default function MobileNav({
                 <Dialog.Panel className="pointer-events-auto relative w-screen max-w-[16rem]">
                   <div className="flex items-start pl-8 gap-4 h-full flex-col overflow-y-scroll bg-primary-lighter py-6 shadow-xl">
                     <LinkMobile
-                      sectionRef={aboutRef}
+                      href="#about"
                       inView={sectionView === 'about'}
                     >
                       <p>{t("about")}</p>
                     </LinkMobile>
                     <LinkMobile
-                      sectionRef={projectsRef}
+                      href="#projects"
                       inView={sectionView === 'projects'}
                     >
                       <p>{t("portfolio")}</p>
                     </LinkMobile>
                     <LinkMobile
-                      sectionRef={contactRef}
+                      href="#contact"
                       inView={sectionView === 'contact'}
                     >
                       <p>{t("contact")}</p>
+                    </LinkMobile>
+                    <LinkMobile
+                      href="#blog"
+                      inView={false}
+                    >
+                      <p>{t("blog")}</p>
                     </LinkMobile>
                   </div>
                 </Dialog.Panel>
@@ -95,20 +95,19 @@ export default function MobileNav({
 function LinkMobile({
   children,
   inView,
-  sectionRef,
+  href,
 }: {
   children: JSX.Element[] | JSX.Element;
   inView: boolean
-  sectionRef: MutableRefObject<HTMLInputElement | null>
+  href : string
 }) {
-  const handleClick = () => scrollToPosition(sectionRef)
 
   return (
-    <button
-      onClick={handleClick}
+    <a
+    href={href}
       className={`capitalize text-2xl font-semibold ${inView ? 'text-accent-400' : 'text-secondary'}`}
     >
       {children}
-    </button>
+    </a>
   );
 }

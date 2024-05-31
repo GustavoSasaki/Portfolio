@@ -18,6 +18,7 @@ const About = forwardRef((props, ref) => {
     <section
       ref={ref as RefObject<HTMLDivElement>}
       className="gu-container pt-14 bg-primary-light pb-8"
+      id="about"
     >
       <div className="ml-4 sm:mb-8">
         <Underline variant="small">

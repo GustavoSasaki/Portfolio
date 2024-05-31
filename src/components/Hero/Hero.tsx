@@ -18,6 +18,7 @@ const Hero = forwardRef<HTMLDivElement, React.PropsWithChildren<Variants>>((prop
   return (
     <section
       className=" pt-[7.75rem] pb-20"
+      id="hero"
       style={{
         backgroundImage:
           "linear-gradient(to bottom, transparent,60%,#1c1917) ," + bgImg,

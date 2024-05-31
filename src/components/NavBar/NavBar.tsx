@@ -1,8 +1,6 @@
 import { japFont } from "@/pages";
 import { MutableRefObject, useState } from "react";
 import MobileNav from "./MobileNav";
-import { scrollToPosition } from "./scrollToPosition";
-import useScrollDirection from "./useScrollDirection";
 import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
 import Hamburger from 'hamburger-react'
@@ -19,18 +17,14 @@ export function NavBar({
   aboutRef,
   projectsRef,
 }: NavRefs) {
-  const scrollDirection = useScrollDirection();
   const [openMobile, setOpenMobile] = useState(false);
   const { t } = useTranslation("nav");
   const viewSection = useSectionView({ heroRef, contactRef, aboutRef, projectsRef })
 
   return (
     <header
-      className={`sticky ${scrollDirection === "down" ? "-top-14" : "top-0"
-        } transition-all duration-1000  
-            z-40 w-full h-14 
-            ${viewSection !== 'about'?'bg-primary-light' : 'bg-[#151311]'} 
-            flex items-center shadow-2xl`}
+      className={`sticky   top-0 z-40 w-full h-14 border-b-[1px] border-primary-lighter
+                 bg-primary  flex items-center shadow-2xl`}
     >
       <nav className="flex justify-between items-center gu-container text-secondary ">
         <HomeButton />
@@ -53,14 +47,17 @@ export function NavBar({
         </div>
 
         <div className="sm:flex justify-between items-center gap-3 hidden ml-auto">
-          <NavLink sectionRef={aboutRef} inView={viewSection === 'about'}>
+          <NavLink href={"#about"} inView={viewSection === 'about'}>
             <p>{t("about")}</p>
           </NavLink>
-          <NavLink sectionRef={projectsRef} inView={viewSection === 'projects'}>
-            <p>{t("portfolio")}</p>
+          <NavLink href={"#projects"} inView={viewSection === 'projects'}>
+            <p>{t("projects")}</p>
           </NavLink>
-          <NavLink sectionRef={contactRef} inView={viewSection === 'contact'}>
+          <NavLink href={"#contact"} inView={viewSection === 'contact'}>
             <p>{t("contact")}</p>
+          </NavLink>
+          <NavLink href={"/blog"} inView={false}>
+            <p>{t("blog")}</p>
           </NavLink>
         </div>
       </nav>
@@ -71,21 +68,20 @@ export function NavBar({
 function NavLink({
   children,
   inView,
-  sectionRef,
+  href,
 }: {
   children: JSX.Element[] | JSX.Element;
   inView: boolean
-  sectionRef: MutableRefObject<HTMLInputElement | null>
+  href: string
 }) {
-  const handleClick = () => scrollToPosition(sectionRef)
 
   return (
-    <button
-      onClick={handleClick}
-      className={`capitalize text-base font-semibold hover:text-accent-400 ${inView ? 'text-accent-400' : ''} `}
+    <a
+      href={href}
+      className={`capitalize text-base font-semibold hover:text-accent ${inView ? 'text-primary-lightest' : ''} `}
     >
       {children}
-    </button>
+    </a>
   );
 }
 

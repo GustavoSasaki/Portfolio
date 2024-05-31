@@ -19,6 +19,7 @@ const Contact = forwardRef((props, ref) => {
     <section
       ref={ref as RefObject<HTMLDivElement>}
       className="gu-container pb-10"
+      id="contact"
     >
       <Underline variant={"small"}>
         <h2>{t("title")}</h2>

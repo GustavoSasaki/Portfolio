@@ -1,16 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 import colors from "tailwindcss/colors";
 
-export default module.exports = {
+export default {
   content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     extend: {
       colors: {
         primary: {
           ...colors.stone,
-          lighter: colors.stone["700"],
-          light: colors.stone["800"],
-          DEFAULT: colors.stone["900"],
+          lightest: colors.stone["400"],
+          lighter: colors.stone["800"],
+          light: colors.stone["900"],
+          DEFAULT: colors.stone["950"],
         },
         secondary: {
           ...colors.gray,

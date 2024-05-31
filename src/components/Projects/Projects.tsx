@@ -12,6 +12,7 @@ const Projects = forwardRef((props, ref) => {
     <section
       ref={ref as RefObject<HTMLDivElement>}
       className="gu-container pt-8 pb-4 sm:pb-8"
+      id="projects"
     >
       <div className="ml-4 mb-5 sm:mb-8">
         <Underline variant="small">
@@ -128,42 +129,7 @@ const getProjects = (t: TFunction) => {
           <p>{t("cookies.introduction")}</p>
         </>
       ),
-    },
-    {
-      img: "https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/heroCreationAI.png",
-      title: t("hero-ai.title"),
-      stack: [
-        "Angular",
-        "React",
-        "Tailwind",
-        "Typescript",
-        "PostgresSQL",
-        "API Calls",
-        "NodeJS",
-      ],
-      internalUrl: ".",
-      externalUrl: "https://hero-front-end.vercel.app/",
-      projectLinks: [
-        {
-          url: "https://hero-front-end.vercel.app/",
-          name: t("hero-ai.view-button"),
-          icon: <FiExternalLink />,
-        },
-      ],
-      description: (
-        <>
-          <p className=" text-xl">
-            <strong>{t("hero-ai.subtitle")}</strong>
-          </p>
-          <p>{t("hero-ai.description")}</p>
-          <p>{t("hero-ai.challenges")}</p>
-          <ul>
-            <li>{t("hero-ai.paralalized")}</li>
-            <li>{t("hero-ai.loading-bar")}</li>
-          </ul>
-        </>
-      ),
-    },
+    }
   ] as Project[];
 };
 
