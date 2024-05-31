@@ -2,21 +2,21 @@
   "title": "Projects",
   "see-website": "See Website",
   "gamehongo": {
-    "subtitle": "The best way of learning a language is actually using it.",
-    "description": "In GameHongo you can find games and channels suitable for your current japanese level.\nThe website is a list-like system in which users can rate how difficult is the language of games and videos.",
-    "care-experience": "There was a lot of care to ensure the user experience was snap and intuitive.",
-    "redis": "Redis was utilized for caching common searches",
-    "optimistic": "Every edition on information utilizes optimistic updates",
-    "ssr": "Pages have server or static rendering",
-    "responsive": "Responsive Design",
-    "oauth": "OAuth Login",
+    "subtitle": "The best way to learn a language is by actively using it.",
+    "description": "In GameHongo, you can discover games and channels that match your current Japanese level. The website features a list-like system where users can rate the difficulty of the language used in games and videos.",
+    "care-experience": "Great care was taken to ensure a smooth and intuitive user experience, including:",
+    "redis": "Utilizing Redis for caching common searches",
+    "optimistic": "Implementing optimistic updates for all information edits",
+    "ssr": "Supporting server-side or static rendering for pages",
+    "responsive": "Ensuring responsive design",
+    "oauth": "Providing OAuth login functionality",
     "view-button": "View it Here"
   },
   "amdocs": {
     "title": "Fullstack Developer Amdocs",
-    "introduction": "While in Amdocs, I participate as a fullstack developer in the development of an web tool for creation telephony packages to Oi Company.",
-    "main-task": "I contributed to the improviment of the Spring Boot Java server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
-    "other-tasks": "I also created a bash tool for converting GitLab commits to ClearCase. Greatly improving the velocity of building new releases.",
+    "introduction": "While at Amdocs, I participated as a full-stack developer in the development of a web tool for creating telephony packages for Oi Company.",
+    "main-task": "I contributed to the improvement of the Spring Boot Java server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
+    "other-tasks": "Additionally, I developed a bash tool for converting GitLab commits to ClearCase, greatly enhancing the speed of building new releases.",
     "view-button": "View it Here"
   },
   "cookies": {

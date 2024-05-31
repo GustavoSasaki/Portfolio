@@ -1,10 +1,10 @@
 {
   "title": "Sobre",
-  "introduction": "Como desenvolvedor, tenho interesse na criação de sites como um todo.\nDo design, front-end até o back-end.\nTudo isso para que os usuários tenha uma experiencia intuitiva e agradável",
   "grad": {
-    "introduction": "Eu também sou um graduando recente de ",
+    "introduction": "Minha paixão por código começou quando eu era criança, tentando fazer um mod para Minecraft. Para aprender programação, eu fiz o Bacharelado em Ciência da Computação na ",
     "usp": "Universidade de São Paulo",
-    "rest": " 🎓 no curso de ciências da computação. E eu trabalhei por aproximadamente 1,5 anos na Amdocs."
+    "rest": " 🎓."
   },
-  "hobby": "Quando não estou trabalhando, eu provavelmente estou tentando cozinhar algo comestível, correndo ou vendo anime."
+  "follow": "Após minha graduação, trabalhei por dois anos como desenvolvedor full-stack na Amdocs e em Cambé. Atualmente, estou focado na criação de ferramentas web, abrangendo design, front-end e back-end. Meu objetivo é desenvolver projetos com experiências de usuário acessíveis e intuitivas, como o projeto Gamhongo, que concluí sozinho.",
+  "hobby": "Quando não estou trabalhando, você provavelmente me encontrará tentando cozinhar algo comestível, correndo ou aprendendo japonês."
 }

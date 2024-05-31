@@ -12,13 +12,10 @@ import localFont from "@next/font/local";
 import Hero from "@/components/Hero/Hero";
 
 //to-do:
-//not mvp
 //use better photo
 //create detail project page
-//put sub-title in about
 //começar a usar framer motion
-//maybe more storytelling?
-//read book about portfolio
+//rewrite amdocs pt ; cookies en-pt
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({

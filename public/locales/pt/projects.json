@@ -2,14 +2,14 @@
   "title": "Projetos",
   "see-website": "Veja o site",
   "gamehongo": {
-    "subtitle": "A melhor forma de aprender uma lingua é usando ela.",
-    "description": "No GameHongo, você consegue achar jogos e canais do youtube adequados ao seu nível atual de japonês.\nO site é um sistema parecido com lista no qual os usuários avaliam o quão difícil é a linguagem dos jogos e vídeos.",
+    "subtitle": "A melhor maneira de aprender um idioma é usando ele.",
+    "description": "No GameHongo, você pode descobrir jogos e canais que correspondem ao seu nível atual de japonês. O site apresenta um sistema em formato de lista onde os usuários podem avaliar a dificuldade do idioma usado em jogos e vídeos.",
     "care-experience": "No desenvolvimento, tive bastânte cuidado para criar uma experiência de usuário intuitiva e responsivo.",
-    "redis": "Redis foi utilizado para cachear searchs comuns",
-    "optimistic": "Toda edição de informação utiliza optimistic updates",
-    "ssr": "As páginas têm renderização estática ou SSR",
-    "responsive": "O design é responsivo",
-    "oauth": "o login é por Aouth",
+    "redis": "Utilização do Redis para cache de pesquisas comuns",
+    "optimistic": "Implementação de atualizações otimistas para todas as edições de informações",
+    "ssr": "Suporte à renderização do lado do servidor ou renderização estática para as páginas",
+    "responsive": "Design responsivo",
+    "oauth": "Fornecimento de funcionalidade de login com OAuth",
     "view-button": "Entre no site"
   },
   "amdocs": {

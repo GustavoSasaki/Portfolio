@@ -42,13 +42,13 @@ const About = forwardRef((props, ref) => {
         </div>
 
         <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg flex-[1_0_0]">
-          <p>{t("introduction")}</p>
 
           <p>
             <span>{t("grad.introduction")}</span>
             <a href="https://www5.usp.br/">{t("grad.usp")}</a>
             {t("grad.rest")}
           </p>
+          <p>{t("follow")}</p>
           <p ref={observerRef}>{t("hobby")}</p>
         </div>
       </div>
