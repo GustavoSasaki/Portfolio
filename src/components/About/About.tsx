@@ -1,18 +1,15 @@
-import { forwardRef, RefObject } from "react";
-import { useTrackVisibility } from "react-intersection-observer-hook";
-import { useSlidInStyle } from "../useSlidInStyle";
+import { forwardRef, RefObject, useRef } from "react";
 import { Underline } from "../Underline";
 import { useTranslation } from "next-i18next";
 import Image from 'next/image'
+import { useInView } from "framer-motion";
 
 const About = forwardRef((props, ref) => {
   const { t } = useTranslation("about");
 
-  const [observerRef, { wasEverVisible }] = useTrackVisibility();
-  let slideWhenVisible = useSlidInStyle({
-    wasEverVisible,
-    preStyle: " opacity-0 translate-y-[50px]",
-  });
+  const observerRef = useRef(null);
+  const isInView = useInView(observerRef, { once: true })
+  const slideWhenVisible = isInView ? " transition-all duration-1000 " : " opacity-0 translate-y-[50px]"
 
   return (
     <section
@@ -27,7 +24,9 @@ const About = forwardRef((props, ref) => {
       </div>
 
       <div className={"sm:flex sm:gap-8"}>
-        <div className="h-[322px] bg-gradient-to-tr from-accent-200 to-purple-300 rounded-lg relative max-w-[250px]  flex-[0_0_25%] mx-auto my-7">
+        <div className="sm:w-[25%] max-w-[250px] mx-auto my-7 flex flex-col-reverse sm:flex-col">
+          <div
+            className="h-[322px] bg-gradient-to-tr from-accent-200 to-purple-300 rounded-lg relative w-full">
             <Image
               alt="Gustavo Sasaki Roncaglia"
               src="https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/photo"
@@ -38,7 +37,8 @@ const About = forwardRef((props, ref) => {
                 slideWhenVisible
               }
             />
-
+          </div>
+          <div ref={observerRef} className="w-1 h-1"></div>
         </div>
 
         <div className="prose prose-base prose-invert font-medium mx-auto hover:prose-a:text-accent sm:prose-lg flex-[1_0_0]">
@@ -49,7 +49,7 @@ const About = forwardRef((props, ref) => {
             {t("grad.rest")}
           </p>
           <p>{t("follow")}</p>
-          <p ref={observerRef}>{t("hobby")}</p>
+          <p >{t("hobby")}</p>
         </div>
       </div>
     </section>

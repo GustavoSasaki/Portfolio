@@ -1,11 +1,10 @@
 import { Underline } from "../Underline";
 import { ProjectExternalLinkButton } from "./ProjectExternalLinkButton";
 import { FiExternalLink } from "react-icons/fi";
-import { useTrackVisibility } from "react-intersection-observer-hook";
-import { useSlidInStyle } from "../useSlidInStyle";
 import { useTranslation } from "next-i18next";
-import { useState } from "react";
+import { useRef } from "react";
 import Image from 'next/image'
+import { useInView } from "framer-motion";
 
 
 export interface ProjectLink {
@@ -37,11 +36,15 @@ export function ProjectBox({
 
   const { t } = useTranslation("projects");
 
-  const [observerRef, { wasEverVisible }] = useTrackVisibility();
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
+  const postStyle = "transition-all duration-1000 "
   const preStyle = isEven
     ? " opacity-0 sm:translate-x-[-50px] sm:translate-y-[0px] translate-y-[50px] translate-y-[0px]"
     : " opacity-0 sm:translate-x-[50px] sm:translate-y-[0px] translate-y-[50px] translate-y-[0px]";
-  let slideWhenVisible = useSlidInStyle({ wasEverVisible, preStyle });
+  const sliInStyle = isInView ? postStyle : preStyle
 
   const gridTemplateAreas = isEven
     ? `"img title" "img tech" "img description" "img button"`
@@ -57,7 +60,7 @@ export function ProjectBox({
         target="_blank"
         className={
           "overflow-hidden w-72 h-72 md:w-80 md:h-80 block mx-auto rounded-lg relative group [grid-area:_img] mb-3 " +
-          slideWhenVisible
+          sliInStyle
         }
       >
         <div className="absolute opacity-0 bg-accent-600 group-hover:opacity-90 w-full h-full z-10 transition duration-500" />
@@ -96,14 +99,13 @@ export function ProjectBox({
       </div>
 
       <div
-        ref={observerRef}
+        ref={ref}
         className="sm:text-lg mx-2 sm:mx-0 sm:mt-2 [grid-area:_description] prose prose-base prose-invert hover:prose-a:text-accent"
       >
         {description}
       </div>
 
       <div className="flex justify-start gap-3 mt-5 items-center [grid-area:_button]">
-        {/*<ProjectDetailButton internalUrl={internalUrl} projectTitle={title} /> */}
         {projectLinks.map((links) => {
           return <ProjectExternalLinkButton {...links} key={links.url} />;
         })}

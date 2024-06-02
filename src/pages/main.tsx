@@ -14,8 +14,9 @@ import Hero from "@/components/Hero/Hero";
 //to-do:
 //use better photo
 //create detail project page
-//começar a usar framer motion
 //rewrite amdocs pt ; cookies en-pt
+// colocar araucaria
+// tomodachi
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({

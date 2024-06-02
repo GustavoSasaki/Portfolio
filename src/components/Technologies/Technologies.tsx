@@ -11,16 +11,17 @@ import {
 import { DiTerminal, DiGit, DiJava } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
 import { BiLogoTailwindCss, BiLogoSpringBoot } from "react-icons/bi";
-import { useTrackVisibility } from "react-intersection-observer-hook";
-import { useSlidInState } from "../useSlidInStyle";
 import { useTranslation } from "next-i18next";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function Technologies() {
   const { t } = useTranslation("common");
 
-  const [observerRef, { wasEverVisible }] = useTrackVisibility();
-  let slideState = useSlidInState({ wasEverVisible });
-  const slideWhenVisible = GetSlideInClass(slideState);
+  const observerRef = useRef(null);
+  const isInView = useInView(observerRef, { once: true })
+  const slideWhenVisible = isInView ? " transition-all duration-1000" : " opacity-0 translate-x-[50px]"
+
 
   return (
     <section className="gu-container pt-8 mb-12 max-w-full overflow-hidden">
@@ -32,7 +33,7 @@ export function Technologies() {
 
       <div className="flex flex-wrap justify-between gap-y-4">
         {technologies.map((tech, index) => {
-          const delay = slideState === "active" ? index * 100 + "ms" : "0ms";
+          const delay = isInView ? index * 100 + "ms" : "0ms";
           return (
             <div
               key={tech.name}
@@ -48,13 +49,6 @@ export function Technologies() {
       <div ref={observerRef} />
     </section>
   );
-}
-
-function GetSlideInClass(state: "pre" | "active" | "locked" | undefined) {
-  if (!state || state === "locked") return "";
-  if (state === "active") return " transition-all duration-1000";
-
-  return " opacity-0 translate-x-[50px]";
 }
 
 const technologies: Tech[] = [
