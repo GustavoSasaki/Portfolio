@@ -47,13 +47,13 @@ export function NavBar({
         </div>
 
         <div className="sm:flex justify-between items-center gap-3 hidden ml-auto">
-          <NavLink href={"#about"} inView={viewSection === 'about'}>
+          <NavLink href={"/#about"} inView={viewSection === 'about'}>
             <p>{t("about")}</p>
           </NavLink>
-          <NavLink href={"#projects"} inView={viewSection === 'projects'}>
+          <NavLink href={"/#projects"} inView={viewSection === 'projects'}>
             <p>{t("projects")}</p>
           </NavLink>
-          <NavLink href={"#contact"} inView={viewSection === 'contact'}>
+          <NavLink href={"/#contact"} inView={viewSection === 'contact'}>
             <p>{t("contact")}</p>
           </NavLink>
           <NavLink href={"/blog"} inView={false}>

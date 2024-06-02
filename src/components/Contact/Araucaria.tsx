@@ -1,7 +1,7 @@
 export function Araucaria() {
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-            width="288px" height="338px" viewBox="0 0 288 338" enable-background="new 0 0 288 338" >
+            width="288px" height="338px" viewBox="0 0 288 338" enableBackground="new 0 0 288 338" >
             <path className="fill-primary-lighter"  fill="#277c48" d="M134.333,303c0,0,0-44.999,0-49.666s0-61.998,0-67.665S136,150.896,136,150.896v-3.894
 	c0,0-2.333,0.667-4.667-1.333s2.333-12.667,2.333-12.667l-2.987-1.667l2.66-3.333v-1.667h-2.66c0,0,2-8,2.66-10s2.66-5,2.66-5
 	v-9.667h-2.66v-5.667l-4.673,2.333l1.667,2.333l-6.667,1.333l-3,0.333v1.667v2.333v2.667l4.667,2.333l3-3v5.667
