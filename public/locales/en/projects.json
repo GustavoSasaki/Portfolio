@@ -16,23 +16,14 @@
     "title": "Fullstack Developer Amdocs",
     "introduction": "While at Amdocs, I participated as a full-stack developer in the development of a web tool for creating telephony packages for Oi Company.",
     "main-task": "I contributed to the improvement of the Spring Boot Java server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
-    "other-tasks": "Additionally, I developed a bash tool for converting GitLab commits to ClearCase, greatly enhancing the speed of building new releases.",
+    "other-tasks": "Additionally, I developed a bash tool for converting Git commits to ClearCase, greatly enhancing the speed of building new releases.",
     "view-button": "View it Here"
   },
   "cookies": {
     "title": "Whimsy Cookie Workshop",
     "subtitle": "The Handmaid Cookies of Sanca",
-    "introduction": "An one page website for a cookie restaurant. The entire website was design with an cool vibe. It was utilized a lot of smooth animation with Framer Motion and an multi-color pallete.",
+    "introduction": "A single-page website for a cookie restaurant, designed with a cool and cozy vibe. The site features smooth animations created with Framer Motion and a vibrant, multi-color palette.",
     "view-button": "View it Here",
     "git-button": "Code"
-  },
-  "hero-ai": {
-    "title": "Hero Creation AI",
-    "subtitle": "Create your Super Hero with just one click ",
-    "description": "In this website you can quickly create a new hero with AI generated image and backstory.\nThe project was utilized to polish my front-end and design skills.",
-    "challenges": "I encountered a significant challenge related to the time-consuming nature of AI generation. To address this issue, I implemented the following measures:",
-    "paralalized": "Parallelizing the backstory and image generation processes.",
-    "loading-bar": "Incorporating a spinning wheel and loading bar to enhance user experience and provide real-time feedback.",
-    "view-button": "View it Here"
   }
 }

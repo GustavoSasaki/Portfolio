@@ -14,7 +14,6 @@ import Hero from "@/components/Hero/Hero";
 //to-do:
 //use better photo
 //create detail project page
-//rewrite amdocs pt ; cookies en-pt
 // tomodachi
 
 const inter = Inter({ subsets: ["latin"] });

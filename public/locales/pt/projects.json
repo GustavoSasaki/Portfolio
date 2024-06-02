@@ -14,25 +14,16 @@
   },
   "amdocs": {
     "title": "Desenvolvedor Fullstack Amdocs",
-    "introduction": "Na Amdocs, participei como desenvolvedor fullstack do desenvolvimento de uma ferramenta web para criação de pacotes de telefonia para a Empresa Oi.",
-    "main-task": "Eu contribui para a melhoria do servidor Java Spring Boot, eu construi requests para o banco de dados OracleSQL com PL/SQL e construi novas páginas com HTML/jQuery.",
-    "other-tasks": "Além disso, criei uma série de comandos bash para converter commits do GitLab para ClearCase. Aumentando drasticamente a velocidade de build de novas releases.",
+    "introduction": "Durante meu tempo na Amdocs, participei como desenvolvedor full-stack no desenvolvimento de uma ferramenta web para a criação de pacotes de telefonia para a empresa Oi.",
+    "main-task": "Contribuí para a melhoria do servidor Java Spring Boot, gerenciei o banco de dados OracleSQL e criei novas páginas utilizando HTML/jQuery.",
+    "other-tasks": "Além disso, desenvolvi uma ferramenta bash para converter commits do Git para o ClearCase, o que aumentou significativamente a velocidade do build de novas releases.",
     "view-button": "Entre no site"
   },
   "cookies": {
     "title": "Whimsy Cookie Workshop",
     "subtitle": "Os Cookies Artesanais de Sanca",
-    "introduction": "Website para um restaurante de cookies. O site inteiro foi construido para ter uma vibe de 'cool/hippie'. Foi utilizado várias animações suaves do Framer Motion e uma paleta de cores multi-colorida.",
+    "introduction": "Site de página única para um restaurante de biscoitos, projetado com uma vibe 'cool and cozy'. O site apresenta animações fluidas criadas com Framer Motion e uma paleta de cores vibrante e multicolorida.",
     "view-button": "Entre no site",
     "git-button": "Código"
-  },
-  "hero-ai": {
-    "title": "Criação de herois AI",
-    "subtitle": "Crie seu super-herói com apenas um clique",
-    "description": "Neste site você consegue criar rapidamente um novo herói com imagem de perfil e backstory geradas por IA.\n O projeto foi utilizado para polir minhas habilidades de front-end e design.",
-    "challenges": "Um dos desafios encontrados foi a demora excessina na geração de conteúdo pela IA. Para resolver isso:",
-    "paralalized": "Foi paralizado a geração de backstory e a geração de imagem.",
-    "loading-bar": "Foi incorporado uma spinning wheel e uma barra de loading. Melhorando o feed-back ao usuário",
-    "view-button": "Entre no site"
   }
 }
