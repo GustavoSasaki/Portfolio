@@ -1,9 +1,7 @@
-import { TextField, ThemeProvider } from "@mui/material";
-import { forwardRef, RefObject, useRef, useState } from "react";
+import { forwardRef, RefObject, useState } from "react";
 import { useTranslation } from "next-i18next";
-import { Underline } from "../Underline";
-import { muiTheme } from "./FormTheme";
-import { SendEmailButton } from "./SendEmailButton";
+import { Araucaria } from "./Araucaria";
+import { SendEmail } from "./SendEmail";
 
 const Contact = forwardRef((props, ref) => {
   const { t } = useTranslation("contact");
@@ -16,75 +14,18 @@ const Contact = forwardRef((props, ref) => {
   const messageError = message?.length === 0;
 
   return (
-    <section
-      ref={ref as RefObject<HTMLDivElement>}
-      className="gu-container pb-10"
-      id="contact"
-    >
-      <Underline variant={"small"}>
-        <h2>{t("title")}</h2>
-      </Underline>
+    <div className=" flex mx-auto max-w-[1315px] relative "
+      ref={ref as RefObject<HTMLDivElement>}>
+      <div className="absolute hidden min-[1315px]:block bottom-[-45px] left-[-10px]   ">
+        <Araucaria />
+      </div>
 
-      <p className="text-sm sm:text-base pt-1 pb-4">
-        {t("description.any-question")} {t("description.interest-hiring")}
-        <br />
-        {t("description.send-email")}
-      </p>
+      <SendEmail />
 
-      <ThemeProvider theme={muiTheme}>
-        <form
-          className="w-full"
-          action="https://formspree.io/f/xdorepvg"
-          method="POST"
-        >
-          <TextField
-            id="name"
-            label="name"
-            inputProps={{ name: t("form.name.title") }}
-            placeholder={t("form.name.placeholder")}
-            variant="filled"
-            fullWidth
-            error={nameError}
-            required
-            type={"text"}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <div className="h-4"></div>
-
-          <TextField
-            id="email"
-            label="email"
-            inputProps={{ name: t("form.email.title") }}
-            placeholder={t("form.email.placeholder")}
-            variant="filled"
-            fullWidth
-            required
-            type={"email"}
-            error={emailError}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <div className="h-5"></div>
-
-          <TextField
-            id="message"
-            multiline
-            minRows={4}
-            label="message"
-            inputProps={{ name: t("form.message.title") }}
-            placeholder={t("form.message.placeholder")}
-            variant="filled"
-            fullWidth
-            required
-            type={"text"}
-            error={messageError}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <div className="h-6"></div>
-
-          <SendEmailButton />
-        </form>
-      </ThemeProvider>
-    </section>
+      <div className="absolute hidden min-[1315px]:block bottom-[-90px] right-[15px]  scale-75 -scale-x-100">
+        <Araucaria />
+      </div>
+    </div>
   );
 });
 
