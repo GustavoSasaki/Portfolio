@@ -7,6 +7,7 @@ import localFont from "@next/font/local";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Title } from "@/components/Blog/Title";
+import { Articles } from "@/components/Blog/Articles";
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
@@ -31,6 +32,8 @@ export default function Blog() {
                 <main className=" grow ">
 
                     <Title />
+
+                    <Articles />
                 </main>
 
                 <Footer />

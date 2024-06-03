@@ -17,7 +17,7 @@ export default {
           ...colors.gray,
           darker: colors.gray["400"],
           dark: colors.gray["300"],
-          DEFAULT: "#FFF",
+          DEFAULT: colors.gray["200"],
         },
         accent: {
           200: "#8cedb1",
