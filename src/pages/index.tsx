@@ -1,23 +1,14 @@
-import { Inter } from "@next/font/google";
-import { Footer } from "@/components/Footer/Footer";
 import { MainStack } from "@/components/Hero/MainStack/MainStack";
 import { Technologies } from "@/components/Technologies/Technologies";
-import { NavBar, NavRefs } from "@/components/NavBar/NavBar";
-import { HeadBox } from "@/components/HeadBox";
+import {  NavRefs } from "@/components/NavBar/NavBar";
 import { useRef } from "react";
 import About from "@/components/About/About";
 import Contact from "@/components/Contact/Contact";
 import Projects from "@/components/Projects/Projects";
-import localFont from "@next/font/local";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Hero from "@/components/Hero/Hero";
-
-const inter = Inter({ subsets: ["latin"] });
-export const japFont = localFont({
-  src: "../util/NotoSansJP-VariableFont_wght.ttf",
-  variable: "--font-jap",
-});
+import { SiteLayout } from "@/components/SiteLayout";
 
 export default function Home() {
   const navRefs: NavRefs = {
@@ -27,31 +18,21 @@ export default function Home() {
     heroRef: useRef(null),
   };
   return (
-    <>
-      <HeadBox />
-      <NavBar {...navRefs} />
-      <div
-        className={`flex flex-col justify-between items-stretch bg-primary min-h-screen ${inter.className} text-secondary font-medium`}
-      >
-        <main className=" grow ">
-          <div className="bg-primary-light">
-            <div className="bg-primary pb-24">
-              <Hero variant={"back"} ref={navRefs.heroRef} />
-            </div>
+    <SiteLayout navRefs={navRefs}>
+      <div className="bg-primary-light">
+        <div className="bg-primary pb-24">
+          <Hero variant={"back"} ref={navRefs.heroRef} />
+        </div>
 
-            <MainStack />
-            <About ref={navRefs.aboutRef} />
-          </div>
-          <Technologies />
-          <div className="from-primary bg-gradient-to-b to-primary-light">
-            <Projects ref={navRefs.projectsRef} />
-            <Contact ref={navRefs.contactRef} />
-          </div>
-        </main>
-
-        <Footer />
+        <MainStack />
+        <About ref={navRefs.aboutRef} />
       </div>
-    </>
+      <Technologies />
+      <div className="from-primary bg-gradient-to-b to-primary-light">
+        <Projects ref={navRefs.projectsRef} />
+        <Contact ref={navRefs.contactRef} />
+      </div>
+    </SiteLayout>
   );
 }
 

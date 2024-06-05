@@ -1,9 +1,16 @@
-import { japFont } from "@/pages";
 import { MutableRefObject, useState } from "react";
 import MobileNav from "./MobileNav";
 import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
 import Hamburger from 'hamburger-react'
+import localFont from "@next/font/local";
+
+
+export const japFont = localFont({
+  src: "../../util/NotoSansJP-VariableFont_wght.ttf",
+  variable: "--font-jap",
+});
+
 
 export interface NavRefs {
   heroRef: MutableRefObject<HTMLInputElement | null>;
