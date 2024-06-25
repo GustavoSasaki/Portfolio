@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
 import Hamburger from 'hamburger-react'
 import localFont from "@next/font/local";
+import Link from "next/link";
 
 
 export const japFont = localFont({
@@ -83,18 +84,18 @@ function NavLink({
 }) {
 
   return (
-    <a
+    <Link
       href={href}
       className={`capitalize text-base font-semibold hover:text-accent ${inView ? 'text-primary-lightest' : ''} `}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
 export function HomeButton() {
   return (
-    <a href="/" className="text-xl font-semibold "
+    <Link href="/" className="text-xl font-semibold "
       aria-label="Gustavo Sasaki"
     >
       <span className="z-20 relative">Gus</span>
@@ -110,6 +111,6 @@ export function HomeButton() {
         木
       </span>
       <span className="z-20 relative ">avo Sasaki</span>
-    </a>
+    </Link>
   );
 }

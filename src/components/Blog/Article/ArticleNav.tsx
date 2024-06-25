@@ -3,7 +3,7 @@ export function ArticleNav({ mainLinks, current }: { mainLinks: LinkI[], current
         <aside className="sticky w-full ml-8 top-0">
             <nav>
                 <h3 className="text-xl font-medium mb-2">On this page</h3>
-                <ul className="pl-3 gA">
+                <ul className="pl-3">
                     {mainLinks.map((link) => <Link {...link} key={link.id}  current={current} />)}
                 </ul>
             </nav>
