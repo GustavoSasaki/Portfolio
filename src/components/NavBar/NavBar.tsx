@@ -30,7 +30,7 @@ export function NavBar({
 
   return (
     <header
-      className={`sticky   top-0 z-40 w-full h-14 border-b-[1px] border-primary-lighter
+      className={`sticky top-0 z-40 w-full h-14 border-b-[1px] border-primary-lighter
                  bg-primary  flex items-center shadow-2xl`}
     >
       <nav className="flex justify-between items-center gu-container text-secondary ">
@@ -94,7 +94,7 @@ function NavLink({
 
 export function HomeButton() {
   return (
-    <a href="." className="text-xl font-semibold "
+    <a href="/" className="text-xl font-semibold "
       aria-label="Gustavo Sasaki"
     >
       <span className="z-20 relative">Gus</span>
