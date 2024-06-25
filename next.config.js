@@ -14,6 +14,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'ngchltiyfhxkbpitthto.supabase.co'
       },
+      {
+        protocol: 'https',
+        hostname: '100uselessmicroservices.s3.amazonaws.com'
+      },
+      
     ],
   },
 };

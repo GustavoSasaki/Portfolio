@@ -13,4 +13,21 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .gu-container-blog {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: min(100%, 1000px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .grid-content-only {
+    grid-template-columns: auto 
+  }
+
+  .grid-with-nav-bar {
+    grid-template-columns: auto 12rem;
+  }
 }
