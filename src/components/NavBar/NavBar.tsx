@@ -1,10 +1,11 @@
-import { MutableRefObject, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 import MobileNav from "./MobileNav";
 import { useTranslation } from "next-i18next";
 import { useSectionView } from "@/hooks/useSectionView";
 import Hamburger from 'hamburger-react'
 import localFont from "@next/font/local";
 import Link from "next/link";
+import { scrollToHome, scrollToPosition } from "./scrollToPosition";
 
 
 export const japFont = localFont({
@@ -55,18 +56,22 @@ export function NavBar({
         </div>
 
         <div className="sm:flex justify-between items-center gap-3 hidden ml-auto">
-          <NavLink href={"/#about"} inView={viewSection === 'about'}>
+          <NavLink href={"about"} inView={viewSection === 'about'}>
             <p>{t("about")}</p>
           </NavLink>
-          <NavLink href={"/#projects"} inView={viewSection === 'projects'}>
+          <NavLink href={"projects"} inView={viewSection === 'projects'}>
             <p>{t("projects")}</p>
           </NavLink>
-          <NavLink href={"/#contact"} inView={viewSection === 'contact'}>
+          <NavLink href={"contact"} inView={viewSection === 'contact'}>
             <p>{t("contact")}</p>
           </NavLink>
-          <NavLink href={"/blog"} inView={false}>
+          <Link
+            href={"/blog"}
+            className={`capitalize text-base font-semibold hover:text-accent  `}
+          >
             <p>{t("blog")}</p>
-          </NavLink>
+          </Link>
+
         </div>
       </nav>
     </header>
@@ -83,9 +88,20 @@ function NavLink({
   href: string
 }) {
 
+  const [isSection, setIsSection] = useState(false)
+  useEffect(() => {
+    setIsSection(!!document.getElementById(href))
+      , [isSection]
+  })
+
+
   return (
     <Link
-      href={href}
+      href={isSection ? href : "/#" + href}
+      onClick={event => {
+        if (isSection)
+          scrollToPosition({ event, id: href })
+      }}
       className={`capitalize text-base font-semibold hover:text-accent ${inView ? 'text-primary-lightest' : ''} `}
     >
       {children}
@@ -96,6 +112,7 @@ function NavLink({
 export function HomeButton() {
   return (
     <Link href="/" className="text-xl font-semibold "
+      onClick={event => scrollToHome(event)}
       aria-label="Gustavo Sasaki"
     >
       <span className="z-20 relative">Gus</span>

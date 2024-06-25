@@ -1,10 +1,12 @@
+import { scrollToPosition } from "@/components/NavBar/scrollToPosition";
+import Link from "next/link"
 export function ArticleNav({ mainLinks, current }: { mainLinks: LinkI[], current: string }) {
     return (
         <aside className="sticky w-full ml-8 top-0">
             <nav>
                 <h3 className="text-xl font-medium mb-2">On this page</h3>
                 <ul className="pl-3">
-                    {mainLinks.map((link) => <Link {...link} key={link.id}  current={current} />)}
+                    {mainLinks.map((link) => <ArticleLink {...link} key={link.id} current={current} />)}
                 </ul>
             </nav>
         </aside>
@@ -20,14 +22,20 @@ export interface LinkI {
 }
 
 
-function Link({ title, id, children, current }: LinkI) {
+function ArticleLink({ title, id, children, current }: LinkI) {
     return (
         <li>
-            <a href={"#" + id} className={current == id ? " text-accent" : "  text-primary-lightest" + " hover:text-secondary"}>
+            <Link
+                href={"#" + id}
+                onClick={event =>
+                    scrollToPosition({ event, id })
+                }
+
+                className={current == id ? " text-accent" : "  text-primary-lightest" + " hover:text-secondary"}>
                 {title}
-            </a>
+            </Link>
             <ul>
-                {children?.map(child => <SubLink key={child.id} {...child} />)}
+                {children?.map(child => <ArticleSubLink key={child.id} {...child} />)}
             </ul>
         </li>
     )
@@ -39,7 +47,7 @@ interface SubLinkI {
     current?: string;
 }
 
-function SubLink({ title, current, id }: SubLinkI) {
+function ArticleSubLink({ title, current, id }: SubLinkI) {
     return (
         <li className="pl-3">
             <a

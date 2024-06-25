@@ -8,7 +8,7 @@ export function Articles() {
         }}
     >
         {articles.map(a => {
-            return <BlogArticle {...a} />
+            return <BlogArticle key={a.title} {...a} />
         })}
     </section>)
 }
