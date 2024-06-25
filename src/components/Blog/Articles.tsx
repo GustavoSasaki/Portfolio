@@ -18,23 +18,12 @@ export function Articles() {
 const articles: BlogArticleI[] =
     [
         {
-            title: "'Faz o L' discord bot",
-            url: ".",
+            title: "Minecraft Daemons",
+            url: "/blog/minecraft-systemd",
             description: (
                 <p>
-                    Lets make an discord bot using go, deploying on AWS that handle parallel requests.
+                    Lets create an minecraft that automatically start when boot up using systemd
                 </p>
             ),
-        },
-        {
-            title: "'Faz o L' discord bot",
-            url: ".",
-            description: (
-                <p>
-                    Lets make an discord bot using go, deploying on AWS that handle parallel requests.
-                </p>
-            ),
-
-
         }
     ] 

@@ -1,6 +1,4 @@
-import { Highlight, themes } from "prism-react-renderer";
 import { CopyButton } from "./CopyButton";
-import { useState } from "react";
 import { Checkbox } from '@headlessui/react'
 
 type Props = {
