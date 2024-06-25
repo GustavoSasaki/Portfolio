@@ -15,6 +15,9 @@ import Hero from "@/components/Hero/Hero";
 //use better photo
 //create detail project page
 // tomodachi
+//fix mobile in blog
+//when clicking in gustavo sasaki in an article, doesnt go to home page
+// go to section in article doesnt consider header, is going to down
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
