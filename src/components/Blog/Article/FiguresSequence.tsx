@@ -7,7 +7,7 @@ import { Description, Field, Label, Radio, RadioGroup } from '@headlessui/react'
 
 export interface FigureItem {
     url: string
-    description: string
+    description?: string | JSX.Element | JSX.Element[]
     title:string
 }
 

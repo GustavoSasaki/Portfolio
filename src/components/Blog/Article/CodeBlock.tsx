@@ -8,11 +8,12 @@ type Props = {
     wholeCode?: string,
     language?: string,
     file?: string,
-    copyButton?: boolean
-    numberLines?: boolean
+    copyButton?: boolean,
+    numberLines?: boolean,
+    startLine?: number
 };
 
-export function CodeBlock({ code, wholeCode, language, copyButton = true, numberLines = true, file }: Props) {
+export function CodeBlock({ code, wholeCode, language, copyButton = true, numberLines = true, file,startLine=0 }: Props) {
 
     const [showingCode, setShowingCode] = useState(code)
     const showingWholeCode = showingCode === wholeCode
@@ -60,7 +61,7 @@ export function CodeBlock({ code, wholeCode, language, copyButton = true, number
                         {tokens.map((line, i) => (
                             <div key={i} {...getLineProps({ line })}>
                                 {numberLines &&
-                                    <span className="pr-4 text-secondary-dark select-none">{i <9 ? '0':''}{i + 1}</span>
+                                    <span className="pr-4 text-secondary-dark select-none">{showingWholeCode ? 0  : startLine + i <9 ? '0':''}{showingWholeCode ? 0  : startLine + i + 1}</span>
                                 }
                                 {line.map((token, key) => (
                                     <span key={key} {...getTokenProps({ token })} />
