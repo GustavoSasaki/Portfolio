@@ -27,12 +27,8 @@ const title = "Server sent nyancat"
 // write permit http sse request in firefox or browser
 // put an nyan cat at the end
 //fix nyan cat popping when enter page
-//create a system for break point for code
-// fix react code
-// fix go code
-// upload go code
 
-export default function sseNyancat({ goSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function sseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
 
     return (
         <ArticleLayout mainLinks={mainLinks} title={title}>
@@ -109,9 +105,9 @@ export default function sseNyancat({ goSequence }: InferGetStaticPropsType<typeo
                         <br />
                         Remember to put the code inside <code>{"useEffect(()=> {},[])"}</code>, ensuring this way it will only be executed on initial render of the client.
                     </p>
-                    <CodeBlock code={fullCode} language="tsx" />
+                    <CodeBlock {...reactSequence[0]} language="tsx" />
                     <p>Create an button to change manually the flavour.</p>
-                    <CodeBlock code={fullCode} language="tsx" />
+                    <CodeBlock {...reactSequence[1]} language="tsx" />
                     <p>And now you need to permit your browser to extrablash server side event with an HTTP url.
                         The optimal way would be make the back-end support HTTPS request, but this is outside the scope of this article.</p>
                     <Nyancat />
@@ -159,25 +155,6 @@ const awsSequence = [{ url: "https://100uselessmicroservices.s3.amazonaws.com/ss
 { url: "https://100uselessmicroservices.s3.amazonaws.com/sse-nyancat/aws/8.png", description: "Thats all the configuration needed. Click on Launch Instance on the right. And now you can see the instance is alive", title: "Finish Creation" }
 ]
 
-const fullCode = `import { useEffect, useState } from "react";
-
-export function Nyancat() {
-
-    const [flavourUrl, setFlavourUrl] = useState("vanilla")
-
-
-    useEffect(() => {
-        const sseSource = new EventSource("http://localhost:8080/events?stream=flavour");
-
-        sseSource.onmessage = (e) => {
-
-            setFlavourUrl(e.data);
-        };
-    }, [])
-
-    return (<img src={flavourUrl} />)
-}`
-
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 
     props: {
@@ -202,6 +179,15 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
             url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainCors.go",
             tag: "cors"
         }
+        ]),
+        reactSequence: await CodeSequence([{
+            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactStart.tsx",
+            tag: "start"
+        },
+        {
+            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactButton.tsx",
+            tag: "button"
+        },
         ])
     },
 });

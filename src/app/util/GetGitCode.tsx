@@ -8,7 +8,7 @@ export async function getGitCode(url: string) {
     code = removeTabs(code)
 
     //get between <tag>
-    const regex = /^\s*\/\/\s*\<\/?show\>.*$/gm
+    const regex = /^.*\/\/\s*\<\/?show\>.*$/gm
     const startLine = code.split(regex)[0].split(/\r\n|\r|\n/).length - 2
 
     code = code.split(regex)[1]
