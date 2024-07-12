@@ -1,14 +1,13 @@
 import { ArticleLayout } from "@/components/Blog/Article/ArticleLayout";
 import { CodeBlock } from "@/components/Blog/Article/CodeBlock";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FigureSequence } from "@/components/Blog/Article/FiguresSequence";
 import { CodeBlockSimple } from "@/components/Blog/Article/CodeBlockSimple";
 import Image from 'next/image'
-import { Nyancat } from "@/components/Blog/Nyancat/Nyancat";
+import { NyanButton, NyanCat } from "@/components/Blog/Nyancat/Nyancat";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { BiLogoGithub } from "react-icons/bi";
-import { getGitCode } from "@/app/util/GetGitCode";
 import { CodeSequence } from "@/app/util/CodeSequence";
 
 const mainLinks = [
@@ -25,10 +24,27 @@ const title = "Server sent nyancat"
 
 //to-do
 // write permit http sse request in firefox or browser
-// put an nyan cat at the end
 //fix nyan cat popping when enter page
 
 export default function sseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+    const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")
+
+    useEffect(() => {
+        const sseSource = new EventSource("http://184.72.221.34:8080/events?stream=flavour");
+
+        sseSource.onmessage = (e) => {
+            setFlavourUrl(e.data);
+        };
+
+        window.onbeforeunload = function () {
+            sseSource.close();
+        };
+
+        //ensures close when exit page
+        sseSource.onerror = () => sseSource.close()
+
+    }, [])
 
     return (
         <ArticleLayout mainLinks={mainLinks} title={title}>
@@ -83,7 +99,7 @@ export default function sseNyancat({ goSequence, reactSequence }: InferGetStatic
                         Currently the connection is sending no information, lets make it change flavour every 20 seconds and send the event .
                     </p>
                     <CodeBlock {...goSequence[1]} language="go" />
-                                        
+
                     <p>
                         Add an service at http://localhost:8080/change-flavour to change the flavour manually
                     </p>
@@ -95,7 +111,7 @@ export default function sseNyancat({ goSequence, reactSequence }: InferGetStatic
                         <code>"Access-Control-Allow-Origin":"*"</code> , <code>"Access-Control-Allow-Methods":"GET, OPTIONS"</code>,
                         <code>Access-Control-Allow-Headers":"Content-Type"</code>.
                     </p>
-                    <CodeBlock {...goSequence[3]} language="go" file="main.go"  />
+                    <CodeBlock {...goSequence[3]} language="go" file="main.go" />
                     <p>You can see the entire code in at <a href="https://github.com/GustavoSasaki/sse-nyancat">GitHub repository</a> <BiLogoGithub className=" inline-block" />. The code is slight different since I added logs and make it thread safe.</p>
                 </div>
 
@@ -110,7 +126,10 @@ export default function sseNyancat({ goSequence, reactSequence }: InferGetStatic
                     <CodeBlock {...reactSequence[1]} language="tsx" />
                     <p>And now you need to permit your browser to extrablash server side event with an HTTP url.
                         The optimal way would be make the back-end support HTTPS request, but this is outside the scope of this article.</p>
-                    <Nyancat />
+                    <div>
+                        <NyanCat flavourUrl={flavourUrl} />
+                        <NyanButton />
+                    </div>
                 </div>
 
                 <div id="aws">
@@ -138,7 +157,7 @@ export default function sseNyancat({ goSequence, reactSequence }: InferGetStatic
                             <li>Deploy with EC2 instance the GO server</li>
                         </ul>
 
-
+                        <NyanCat flavourUrl={flavourUrl} />
                     </div>
                 </div>
             </div>
@@ -171,10 +190,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
             url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainSSe.go",
             tag: "sse"
         },
-         {
-             url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainManual.go",
-             tag: "manual"
-         },
+        {
+            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainManual.go",
+            tag: "manual"
+        },
         {
             url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainCors.go",
             tag: "cors"

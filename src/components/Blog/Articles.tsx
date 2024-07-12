@@ -25,5 +25,14 @@ const articles: BlogArticleI[] =
                     Lets create an minecraft that automatically start when boot up using systemd
                 </p>
             ),
+        },
+        {
+            title: "Server Sent Nyancat",
+            url: "/blog/sse-nyancat",
+            description: (
+                <p>
+                    Lets make an nyan cat which change flavours synchronized between all devices with SSE.
+                </p>
+            ),
         }
     ] 
