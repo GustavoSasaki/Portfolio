@@ -10,12 +10,12 @@ export function NyanButton() {
 }
 
 
-export function NyanCat({flavourUrl}: {flavourUrl:string}) {
+export function NyanCat({ flavourUrl }: { flavourUrl: string }) {
 
     return (
-        <div className="relative h-60">
-            <div className="relative top-1/2 animate-nyan-moves-upDown w-full " >
-                <img className="relative left-1/2 animate-nyan-moves-leftRight w-[258px] h-[159px]" src={flavourUrl} />
+        <div className="h-60 flex justify-center items-center">
+            <div className=" animate-nyan-moves-upDown" >
+                <img className=" animate-nyan-moves-leftRight w-[258px] h-[159px]" src={flavourUrl} />
             </div>
         </div>
     )

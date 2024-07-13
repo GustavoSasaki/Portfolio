@@ -27,17 +27,17 @@ export default {
         },
       },
       animation: {
-        'nyan-moves-upDown': ' upDown ease 2.2s 2.2s infinite',
+        'nyan-moves-upDown': ' upDown ease 2.2s infinite',
         'nyan-moves-leftRight': ' leftRight ease 1.7s infinite'
       },
       keyframes: {
         upDown: {
-          '0%, 100%': { transform: 'translateY(-45%)' },
-          '50%': { transform: 'translateY(-55%)' },
+          '0%, 100%': { transform: 'translateY(-5%)' },
+          '50%': { transform: 'translateY(5%)' },
         },
         leftRight: {
-          '0%, 100%': { transform: 'translateX(-40%)' },
-          '50%': { transform: 'translateX(-60%)' },
+          '0%, 100%': { transform: 'translateX(-10%)' },
+          '50%': { transform: 'translateX(10%)' },
         },
       },
     },

@@ -23,7 +23,6 @@ const title = "Server sent nyancat"
 
 
 //to-do
-//fix nyan cat popping when enter page
 //update again go code (shit)
 
 export default function SseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -50,7 +49,8 @@ export default function SseNyancat({ goSequence, reactSequence }: InferGetStatic
     return (
         <ArticleLayout mainLinks={mainLinks} title={title}>
             <div className="prose prose-invert  hover:prose-a:text-accent prose-h3:text-2xl prose-code:bg-primary-lighter
-            prose-code:rounded-md prose-code:px-1 prose-code:py-1 prose-code:mx-1 prose-code:before:content-none prose-code:after:content-none">
+            prose-code:rounded-md prose-code:px-1 prose-code:py-1 prose-code:mx-1 prose-code:before:content-none prose-code:after:content-none 
+            w-full">
                 <div id="sse">
                     <p >
                         The base communication in web is made by the client send <strong>one</strong> request and receiving <strong>one</strong> response,
