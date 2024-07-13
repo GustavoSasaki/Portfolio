@@ -16,7 +16,8 @@ import Hero from "@/components/Hero/Hero";
 //create detail project page
 // tomodachi
 //fix mobile in blog
-//make go home using next Link isntead of location API
+// add my photo to article
+// add header photo to article and article list
 
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
