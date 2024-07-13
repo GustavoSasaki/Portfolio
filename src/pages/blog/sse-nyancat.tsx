@@ -25,8 +25,9 @@ const title = "Server sent nyancat"
 //to-do
 // write permit http sse request in firefox or browser
 //fix nyan cat popping when enter page
+//update again go code (shit)
 
-export default function sseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function SseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
 
     const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")
 
@@ -44,6 +45,7 @@ export default function sseNyancat({ goSequence, reactSequence }: InferGetStatic
         //ensures close when exit page
         sseSource.onerror = () => sseSource.close()
 
+        fetch('http://184.72.221.34:8080/change-flavour').then()
     }, [])
 
     return (
