@@ -16,7 +16,6 @@ import Hero from "@/components/Hero/Hero";
 //create detail project page
 // tomodachi
 //fix mobile in blog
-//fix blog nav sticky
 //make go home using next Link isntead of location API
 
 const inter = Inter({ subsets: ["latin"] });
