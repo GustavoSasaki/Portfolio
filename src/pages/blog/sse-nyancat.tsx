@@ -22,9 +22,6 @@ const mainLinks = [
 const title = "Server sent nyancat"
 
 
-//to-do
-//update again go code (shit)
-
 export default function SseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
 
     const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")

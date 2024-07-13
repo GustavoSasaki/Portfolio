@@ -12,11 +12,12 @@ type Props = {
     numberLines?: boolean,
     startLine?: number
 };
-
-export function CodeBlock({ code, wholeCode, language, copyButton = true, numberLines = true, file,startLine=0 }: Props) {
+//to-do-maybe: fix style when showTopBar == false
+export function CodeBlock({ code, wholeCode, language, copyButton = true, numberLines = true, file, startLine = 0 }: Props) {
 
     const [showingCode, setShowingCode] = useState(code)
     const showingWholeCode = showingCode === wholeCode
+    const showTopBar = !!wholeCode || copyButton
 
 
     return (
@@ -35,10 +36,9 @@ export function CodeBlock({ code, wholeCode, language, copyButton = true, number
                         </div>
                     }
 
-                    <pre style={style} className="mb-1 mt-0">
-
-                        {(!!wholeCode || copyButton) &&
-                            <div className="flex justify-end pb-1 gap-2">
+                    {showTopBar &&
+                        <div className="w-full rounded-t-md pt-2  pb-1 pr-2" style={{backgroundColor: style.backgroundColor}}>
+                            <div className="flex justify-end gap-2 sticky right-0 ">
                                 {wholeCode &&
                                     <div className="rounded-full bg-black/25 p-1 backdrop-blur-sm">
 
@@ -57,11 +57,15 @@ export function CodeBlock({ code, wholeCode, language, copyButton = true, number
                                     <CopyButton text={showingCode} />
                                 }
                             </div>
-                        }
+                        </div>
+                    }
+
+                    <pre style={style} className={"mb-1 mt-0 pt-0 rounded-none"}>
+
                         {tokens.map((line, i) => (
                             <div key={i} {...getLineProps({ line })}>
                                 {numberLines &&
-                                    <span className="pr-4 text-secondary-dark select-none">{showingWholeCode ? 0  : startLine + i <9 ? '0':''}{showingWholeCode ? 0  : startLine + i + 1}</span>
+                                    <span className="pr-4 text-secondary-dark select-none">{showingWholeCode ? 0 : startLine + i < 9 ? '0' : ''}{showingWholeCode ? 0 : startLine + i + 1}</span>
                                 }
                                 {line.map((token, key) => (
                                     <span key={key} {...getTokenProps({ token })} />

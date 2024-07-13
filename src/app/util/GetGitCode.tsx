@@ -48,7 +48,7 @@ function removeTabs(str: string) {
 }
 
 function howManyTabs(code: string) {
-    const regex = /^\s*\/\/\s*\<show\>.*$/gm
+    const regex = /^.*\/\/\s*\<show\>.*$/gm
     const showLine = code.match(regex)
 
     if (!showLine) return 0
