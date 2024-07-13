@@ -23,7 +23,6 @@ const title = "Server sent nyancat"
 
 
 //to-do
-// write permit http sse request in firefox or browser
 //fix nyan cat popping when enter page
 //update again go code (shit)
 
@@ -126,8 +125,15 @@ export default function SseNyancat({ goSequence, reactSequence }: InferGetStatic
                     <CodeBlock {...reactSequence[0]} language="tsx" />
                     <p>Create an button to change manually the flavour.</p>
                     <CodeBlock {...reactSequence[1]} language="tsx" />
-                    <p>And now you need to permit your browser to extrablash server side event with an HTTP url.
-                        The optimal way would be make the back-end support HTTPS request, but this is outside the scope of this article.</p>
+                    <p> Server-sent event connections are typically established using HTTPS requests. 
+                        However, to keep this article concise, we will use an HTTP connection instead. 
+                        For that, you need to grant your browser permission for this type of connection.
+                        <br />
+                        <a href="https://support.mozilla.org/en-US/kb/https-only-prefs#w_enabledisable-https-only-mode">Here</a>
+                        {" is how is done on Firefox and  "}
+                        <a href="https://stackoverflow.com/a/69359943">here</a> is how is done on Chrome.
+                        
+                        </p>
                     <div>
                         <NyanCat flavourUrl={flavourUrl} />
                         <NyanButton />
