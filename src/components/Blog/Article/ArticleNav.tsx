@@ -2,7 +2,7 @@ import { scrollToPosition } from "@/components/NavBar/scrollToPosition";
 import Link from "next/link"
 export function ArticleNav({ mainLinks, current }: { mainLinks: LinkI[], current: string }) {
     return (
-        <aside className="w-full invisible sm:visible">
+        <aside className="flex-none w-[170px]  hidden sm:block">
             <nav className="sticky top-[83px]">
                 <h3 className="text-xl font-medium mb-2">On this page</h3>
                 <ul className="pl-3">

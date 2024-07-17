@@ -21,7 +21,7 @@ export function ArticleLayout({ children, mainLinks, title }: Props) {
         <SiteLayout navRefs={navRefs}>
             <article className=" pt-[6rem] pb-2 gu-container-blog ">
                 <h3 className=" text-4xl font-semibold mb-10 text-secondary">{title}</h3>
-                <div className="grid grid-content-only xl:grid-with-nav-bar relative">
+                <div className="flex relative gap-x-4 flex-row">
 
                     {children}
 
