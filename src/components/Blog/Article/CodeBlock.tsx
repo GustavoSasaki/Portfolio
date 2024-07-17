@@ -60,10 +60,10 @@ export function CodeBlock({ code, wholeCode, language, copyButton = true, number
                         </div>
                     }
 
-                    <pre style={style} className={"mb-1 mt-0 pt-0 rounded-none"}>
+                    <pre className="mb-1 mt-0 pt-0 rounded-none">
 
                         {tokens.map((line, i) => (
-                            <div key={i} {...getLineProps({ line })}>
+                            <div key={i} {...getLineProps({ line })} className="max-w-[300px]">
                                 {numberLines &&
                                     <span className="pr-4 text-secondary-dark select-none">{showingWholeCode ? 0 : startLine + i < 9 ? '0' : ''}{showingWholeCode ? 0 : startLine + i + 1}</span>
                                 }

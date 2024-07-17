@@ -15,10 +15,16 @@ import Hero from "@/components/Hero/Hero";
 //use better photo
 //create detail project page
 // tomodachi
-//fix mobile in blog
+//fix mobile in blog :)
 // add my photo to article
 // add header photo to article and article list
-
+// update portfolio dates and add cambe * 2 quotas
+// make gamhongo go live again
+// get amazon cloud practioner * 2 quotas
+// maybe get one for java
+// finish minecraft * 3 quotas
+// api capibaras * 3 quotas
+//19 quotas
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
   src: "../util/NotoSansJP-VariableFont_wght.ttf",

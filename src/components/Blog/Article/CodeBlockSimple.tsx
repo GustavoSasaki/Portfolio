@@ -26,7 +26,7 @@ export function CodeBlockSimple({ code, language, copyButton = true }: Props) {
                     }
 
                     <pre style={style} className="mb-1 mt-0 flex justify-between max-w-full">
-                        <div className=" overflow-auto">
+                        <div className=" overflow-auto max-w-[300px]">
                             {tokens.map((line, i) => (
                                 <div key={i} {...getLineProps({ line })}>
                                     {line.map((token, key) => (
