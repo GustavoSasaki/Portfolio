@@ -2,9 +2,9 @@ import { BlogArticle, BlogArticleI } from "./BlogArticle";
 
 
 export function Articles() {
-    return (<section className=" gu-container  gap-x-8 gap-y-10 grid"
+    return (<section className=" gu-container flex flex-col sm:grid gap-x-8 gap-y-10"
         style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))"
+            gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))"
         }}
     >
         {articles.map(a => {
