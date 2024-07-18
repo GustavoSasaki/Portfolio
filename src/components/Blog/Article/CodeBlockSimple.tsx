@@ -25,20 +25,17 @@ export function CodeBlockSimple({ code, language, copyButton = true }: Props) {
                         </div>
                     }
 
-                    <pre style={style} className="mb-1 mt-0 flex justify-between max-w-full">
-                        <div className=" overflow-auto ">
+                    <pre style={style} className="mb-1 mt-0 flex justify-between ">
+                        <div >
                             {tokens.map((line, i) => (
                                 <div key={i} {...getLineProps({ line })}>
                                     {line.map((token, key) => (
-                                        <span key={key} {...getTokenProps({ token })} />
+                                        <span key={key} {...getTokenProps({ token })} className="max-w-[400px]" />
                                     ))}
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-row-reverse pb-1 ml-2">
-                            {copyButton && <CopyButton text={code} />}
-                        </div>
-
+                        {copyButton && <CopyButton text={code} />}
                     </pre>
                 </div>
             )}
