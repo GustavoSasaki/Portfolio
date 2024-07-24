@@ -4,8 +4,8 @@ export function ArticleNav({ mainLinks, current }: { mainLinks: LinkI[], current
     return (
         <aside className="flex-none w-[170px]  hidden sm:block">
             <nav className="sticky top-[83px]">
-                <h3 className="text-xl font-medium mb-2">On this page</h3>
-                <ul className="pl-3">
+                <h3 className="text-xl font-medium mb-5">On this page</h3>
+                <ul>
                     {mainLinks.map((link) => <ArticleLink {...link} key={link.id} current={current} />)}
                 </ul>
             </nav>
@@ -24,7 +24,7 @@ export interface LinkI {
 
 function ArticleLink({ title, id, children, current }: LinkI) {
     return (
-        <li>
+        <li className="pb-1">
             <Link
                 href={"#" + id}
                 onClick={event =>
