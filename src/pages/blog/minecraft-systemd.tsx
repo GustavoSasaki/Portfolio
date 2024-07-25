@@ -18,6 +18,7 @@ const mainLinks = [
     { title: "TLDR", id: "tldr" },
 ];
 const title = "Minecraft Daemons"
+const image = "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/mainImage.jpg"
 
 
 
@@ -25,7 +26,7 @@ const title = "Minecraft Daemons"
 export default function minecraftSystemd() {
 
     return (
-        <ArticleLayout mainLinks={mainLinks} title={title}>
+        <ArticleLayout mainLinks={mainLinks} title={title} image={image}>
             <div className="prose prose-invert  hover:prose-a:text-accent prose-h3:text-2xl prose-code:bg-primary-lighter
             prose-code:rounded-md prose-code:px-1 prose-code:py-1 prose-code:mx-1 prose-code:before:content-none prose-code:after:content-none 
             w-full"

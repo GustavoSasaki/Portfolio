@@ -20,6 +20,7 @@ const mainLinks = [
     { title: "TLDR", id: "tldr" },
 ];
 const title = "Server sent nyancat"
+const image = "https://100uselessmicroservices.s3.amazonaws.com/sse-nyancat/mainImage.jpg"
 
 
 export default function SseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -44,7 +45,7 @@ export default function SseNyancat({ goSequence, reactSequence }: InferGetStatic
     }, [])
 
     return (
-        <ArticleLayout mainLinks={mainLinks} title={title}>
+        <ArticleLayout mainLinks={mainLinks} title={title} image={image}>
             <div className="prose prose-invert  hover:prose-a:text-accent prose-h3:text-2xl prose-code:bg-primary-lighter
             prose-code:rounded-md prose-code:px-1 prose-code:py-1 prose-code:mx-1 prose-code:before:content-none prose-code:after:content-none 
             w-full">

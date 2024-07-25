@@ -22,7 +22,7 @@ export function BlogArticle({ title, description, url, image }: BlogArticleI) {
                             src={image}
                             fill={true}
                             className={
-                                "object-cover rounded-md"
+                                "object-cover rounded-md grayscale-[50%]"
                             }
                         />
                     </div>
