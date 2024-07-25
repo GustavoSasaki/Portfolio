@@ -20,6 +20,7 @@ const articles: BlogArticleI[] =
         {
             title: "Minecraft Daemons",
             url: "/blog/minecraft-systemd",
+            image: "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/mainImage.jpg",
             description: (
                 <p>
                     Lets create an minecraft that automatically start when boot up using systemd
@@ -29,6 +30,7 @@ const articles: BlogArticleI[] =
         {
             title: "Server Sent Nyancat",
             url: "/blog/sse-nyancat",
+            image: "https://100uselessmicroservices.s3.amazonaws.com/sse-nyancat/mainImage.jpg",
             description: (
                 <p>
                     Lets make an nyan cat which change flavours synchronized between all devices with SSE.
