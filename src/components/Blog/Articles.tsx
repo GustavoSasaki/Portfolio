@@ -2,7 +2,7 @@ import { BlogArticle, BlogArticleI } from "./BlogArticle";
 
 
 export function Articles() {
-    return (<section className=" gu-container flex flex-col sm:grid gap-x-8 gap-y-10"
+    return (<section className=" gu-container flex flex-col sm:grid gap-x-8 gap-y-10 mb-8"
         style={{
             gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))"
         }}
@@ -17,6 +17,16 @@ export function Articles() {
 
 const articles: BlogArticleI[] =
     [
+        {
+            title: "Interacting with devices using Sysfs",
+            url: "/blog/sysfs",
+            image: "https://100uselessmicroservices.s3.amazonaws.com/sysfs/mainImage.jpg",
+            description: (
+                <p>
+                    Sysfs is the way to manipulate devices in linux system. Let's a little bit with it.
+                </p>
+            ),
+        },
         {
             title: "Minecraft Daemons",
             url: "/blog/minecraft-systemd",

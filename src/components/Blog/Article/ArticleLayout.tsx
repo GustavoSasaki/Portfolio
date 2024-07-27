@@ -23,7 +23,7 @@ export function ArticleLayout({ children, mainLinks, title, image }: Props) {
     };
     return (
         <SiteLayout navRefs={navRefs}>
-            <article className=" pb-2 gu-container-blog ">
+            <article className=" pb-6 gu-container-blog ">
                 <div className="mb-10">
 
                     <div
