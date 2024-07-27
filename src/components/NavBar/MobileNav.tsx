@@ -76,7 +76,7 @@ export default function MobileNav({
                       <p>{t("contact")}</p>
                     </LinkMobile>
                     <LinkMobile
-                      href="#blog"
+                      href="/blog"
                       inView={false}
                     >
                       <p>{t("blog")}</p>
