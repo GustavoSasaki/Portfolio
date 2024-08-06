@@ -6,9 +6,9 @@ import { CodeBlockSimple } from "@/components/Blog/Article/CodeBlockSimple";
 import Image from 'next/image'
 import { NyanButton, NyanCat } from "@/components/Blog/Nyancat/Nyancat";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { BiLogoGithub } from "react-icons/bi";
 import { CodeSequence } from "@/app/util/CodeSequence";
+import { getArticleDefaultProps } from "@/app/util/GetArticleDefaultInfo";
 
 const mainLinks = [
     { title: "Introduction", id: "sse" },
@@ -19,12 +19,9 @@ const mainLinks = [
     },
     { title: "TLDR", id: "tldr" },
 ];
-const title = "Server sent nyancat"
-const image = "https://100uselessmicroservices.s3.amazonaws.com/sse-nyancat/mainImage.jpg"
 
 
-export default function SseNyancat({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
-
+export default function SseNyancat({ goSequence, reactSequence,  image, title }: InferGetStaticPropsType<typeof getStaticProps>) {
     const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")
 
     useEffect(() => {
@@ -123,15 +120,15 @@ export default function SseNyancat({ goSequence, reactSequence }: InferGetStatic
                     <CodeBlock {...reactSequence[0]} language="tsx" />
                     <p>Create an button to change manually the flavour.</p>
                     <CodeBlock {...reactSequence[1]} language="tsx" />
-                    <p> Server-sent event connections are typically established using HTTPS requests. 
-                        However, to keep this article concise, we will use an HTTP connection instead. 
+                    <p> Server-sent event connections are typically established using HTTPS requests.
+                        However, to keep this article concise, we will use an HTTP connection instead.
                         For that, you need to grant your browser permission for this type of connection.
                         <br />
                         <a href="https://support.mozilla.org/en-US/kb/https-only-prefs#w_enabledisable-https-only-mode">Here</a>
                         {" is how is done on Firefox and  "}
                         <a href="https://stackoverflow.com/a/69359943">here</a> is how is done on Chrome.
-                        
-                        </p>
+
+                    </p>
                     <div>
                         <NyanCat flavourUrl={flavourUrl} />
                         <NyanButton />
@@ -180,40 +177,40 @@ const awsSequence = [{ url: "https://100uselessmicroservices.s3.amazonaws.com/ss
 { url: "https://100uselessmicroservices.s3.amazonaws.com/sse-nyancat/aws/8.png", description: "Thats all the configuration needed. Click on Launch Instance on the right. And now you can see the instance is alive", title: "Finish Creation" }
 ]
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    const defaultProps = await getArticleDefaultProps({ path: 'sse-nyancat', locale })
+    return ({
 
-    props: {
-        ...(await serverSideTranslations(locale ?? "en", [
-            "common",
-            "nav",
-        ])),
+        props: {
+            ...defaultProps,
 
-        goSequence: await CodeSequence([{
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainStart.go",
-            tag: "start"
+            goSequence: await CodeSequence([{
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainStart.go",
+                tag: "start"
+            },
+            {
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainSSe.go",
+                tag: "sse"
+            },
+            {
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainManual.go",
+                tag: "manual"
+            },
+            {
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainCors.go",
+                tag: "cors"
+            }
+            ]),
+            reactSequence: await CodeSequence([{
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactStart.tsx",
+                tag: "start"
+            },
+            {
+                url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactButton.tsx",
+                tag: "button"
+            },
+            ])
         },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainSSe.go",
-            tag: "sse"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainManual.go",
-            tag: "manual"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainCors.go",
-            tag: "cors"
-        }
-        ]),
-        reactSequence: await CodeSequence([{
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactStart.tsx",
-            tag: "start"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactButton.tsx",
-            tag: "button"
-        },
-        ])
-    },
-});
+    })
+};
 

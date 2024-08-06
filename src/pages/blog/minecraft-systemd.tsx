@@ -6,6 +6,8 @@ import { CodeBlock } from "@/components/Blog/Article/CodeBlock";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { BiChevronUp } from "react-icons/bi";
 import { FigureSequence } from "@/components/Blog/Article/FiguresSequence";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { getArticleDefaultProps } from "@/app/util/GetArticleDefaultInfo";
 
 const mainLinks = [
     { title: "Introduction", id: "Introduction" },
@@ -17,13 +19,8 @@ const mainLinks = [
     { title: "Port forward", id: "port-forward" },
     { title: "TLDR", id: "tldr" },
 ];
-const title = "Minecraft Daemons"
-const image = "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/mainImage.jpg"
 
-
-
-
-export default function minecraftSystemd() {
+export default function minecraftSystemd({ image, title }: InferGetStaticPropsType<typeof getStaticProps>) {
 
     return (
         <ArticleLayout mainLinks={mainLinks} title={title} image={image}>
@@ -240,7 +237,6 @@ function Space({ size }: { size?: "smallest" | "small" | "mid" | "big" }) {
 }
 
 
-
 const portForwardSequence = [{ url: "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/port-foward/1.png", title: "Enter router website", description: 'Log-in on the internal IP of your router with admin user. Mine was 192.168.1.1.' },
 { url: "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/port-foward/2.png", title: 'Access port-forward page', description: "Click in Application -> Port Mapping" },
 {
@@ -256,3 +252,10 @@ const portForwardSequence = [{ url: "https://100uselessmicroservices.s3.amazonaw
 },
 { url: "https://100uselessmicroservices.s3.amazonaws.com/minecraft-systemd/port-foward/4.png", title: "Finished", description: "your port-forward was added :)" },
 ]
+
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+
+    const props = await getArticleDefaultProps({ path: 'minecraft-systemd', locale })
+    return { props }
+}

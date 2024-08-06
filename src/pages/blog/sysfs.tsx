@@ -1,20 +1,16 @@
 import { ArticleLayout } from "@/components/Blog/Article/ArticleLayout";
 import React from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { CodeSequence } from "@/app/util/CodeSequence";
 import Image from 'next/image'
+import { getArticleDefaultProps } from "@/app/util/GetArticleDefaultInfo";
 
 const mainLinks = [
     { title: "Introduction", id: "introduction" },
     { title: "Hands on", id: "hands" },
     { title: "TLDR", id: "tldr" },
 ];
-const title = "Interacting with devices using Sysfs"
-const image = "https://100uselessmicroservices.s3.amazonaws.com/sysfs/mainImage.jpg"
 
-
-export default function Sysfs({ goSequence, reactSequence }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Sysfs({ image, title }: InferGetStaticPropsType<typeof getStaticProps>) {
 
     return (
         <ArticleLayout mainLinks={mainLinks} title={title} image={image}>
@@ -96,8 +92,8 @@ export default function Sysfs({ goSequence, reactSequence }: InferGetStaticProps
                             style={{ width: '100%', height: 'auto', maxHeight: '400px' }}
                         />
                         <p>
-                            And you got Permission denied. That's because we give root permission to cat command, not the write file command. 
-                            <br/>
+                            And you got Permission denied. That's because we give root permission to cat command, not the write file command.
+                            <br />
                             Let's try again with
                             <code>cat max_brightness | sudo tee brightness.</code>
                             Now the light is on.
@@ -106,8 +102,8 @@ export default function Sysfs({ goSequence, reactSequence }: InferGetStaticProps
                     <section>
                         <h2>Change monitor brightness</h2>
                         <p>
-                            We can do something similar with notebook monitor. 
-                            <br/>
+                            We can do something similar with notebook monitor.
+                            <br />
                             Go to monitor folder inside <code>/sys/class/backlight</code>
                             and <code>echo "0" | sudo tee brightness</code> to turn everything dark.
                         </p>
@@ -123,40 +119,8 @@ export default function Sysfs({ goSequence, reactSequence }: InferGetStaticProps
     )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
-    props: {
-        ...(await serverSideTranslations(locale ?? "en", [
-            "common",
-            "nav",
-        ])),
-
-        goSequence: await CodeSequence([{
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainStart.go",
-            tag: "start"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainSSe.go",
-            tag: "sse"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainManual.go",
-            tag: "manual"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/mainCors.go",
-            tag: "cors"
-        }
-        ]),
-        reactSequence: await CodeSequence([{
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactStart.tsx",
-            tag: "start"
-        },
-        {
-            url: "https://raw.githubusercontent.com/GustavoSasaki/sse-nyancat/main/blogVersion/reactButton.tsx",
-            tag: "button"
-        },
-        ])
-    },
-});
-
+    const props = await getArticleDefaultProps({ path: 'sysfs', locale })
+    return { props }
+}
