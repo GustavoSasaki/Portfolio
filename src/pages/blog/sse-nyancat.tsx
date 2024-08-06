@@ -21,7 +21,7 @@ const mainLinks = [
 ];
 
 
-export default function SseNyancat({ goSequence, reactSequence,  image, title }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function SseNyancat({ goSequence, reactSequence, image, title }: InferGetStaticPropsType<typeof getStaticProps>) {
     const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")
 
     useEffect(() => {
@@ -121,12 +121,16 @@ export default function SseNyancat({ goSequence, reactSequence,  image, title }:
                     <p>Create an button to change manually the flavour.</p>
                     <CodeBlock {...reactSequence[1]} language="tsx" />
                     <p> Server-sent event connections are typically established using HTTPS requests.
-                        However, to keep this article concise, we will use an HTTP connection instead.
-                        For that, you need to grant your browser permission for this type of connection.
+                        But for that, we need to setup an SSL certificate, to keep this article concise, we will instead use an HTTP connection instead.
+                        First you need to remove (temporarily) your browser only-HTTPS mode.
                         <br />
                         <a href="https://support.mozilla.org/en-US/kb/https-only-prefs#w_enabledisable-https-only-mode">Here</a>
                         {" is how is done on Firefox and  "}
                         <a href="https://stackoverflow.com/a/69359943">here</a> is how is done on Chrome.
+                            In firefox, also you need to <a href="https://support.mozilla.org/en-US/kb/mixed-content-blocking-firefox?as=u&utm_source=inproduct&redirectslug=how-does-content-isnt-secure-affect-my-safety&redirectlocale=en-US#w_unblock-mixed-content">
+                            unblock mixed content
+                        </a>
+                        {" (this will permit HTTP and HTTPS connection in my site)."}
 
                     </p>
                     <div>
