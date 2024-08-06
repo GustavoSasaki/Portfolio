@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.620.1",
+    "@aws-sdk/lib-dynamodb": "^3.620.1",
+    "@aws-sdk/util-dynamodb": "^3.620.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^2.0.4",
@@ -20,6 +23,7 @@
     "@types/react-dom": "18.2.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "framer-motion": "^10.18.0",
@@ -37,11 +41,13 @@
     "react-icons": "^4.11.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
     "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.30",
     "prettier": "^3.1.0",
