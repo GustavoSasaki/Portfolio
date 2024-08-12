@@ -25,7 +25,7 @@ export default function SseNyancat({ goSequence, reactSequence, image, title }: 
     const [flavourUrl, setFlavourUrl] = useState("https://www.nyan.cat/cats/original.gif")
 
     useEffect(() => {
-        const sseSource = new EventSource("http://184.72.221.34:8080/events?stream=flavour");
+        const sseSource = new EventSource("https://gustavosasakirapi.online/events?stream=flavour");
 
         sseSource.onmessage = (e) => {
             setFlavourUrl(e.data);
@@ -38,7 +38,7 @@ export default function SseNyancat({ goSequence, reactSequence, image, title }: 
         //ensures close when exit page
         sseSource.onerror = () => sseSource.close()
 
-        fetch('http://184.72.221.34:8080/change-flavour').then()
+        fetch('https://gustavosasakirapi.online/change-flavour').then()
     }, [])
 
     return (
