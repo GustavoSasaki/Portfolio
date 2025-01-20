@@ -67,7 +67,7 @@ export function NavBar({
           </NavLink>
           <Link
             href={"/blog"}
-            className={`capitalize text-base font-semibold hover:text-accent  `}
+            className={`capitalize text-base font-semibold hover:text-accent hidden `}
           >
             <p>{t("blog")}</p>
           </Link>

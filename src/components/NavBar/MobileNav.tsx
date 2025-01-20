@@ -75,12 +75,14 @@ export default function MobileNav({
                     >
                       <p>{t("contact")}</p>
                     </LinkMobile>
-                    <LinkMobile
-                      href="/blog"
-                      inView={false}
-                    >
-                      <p>{t("blog")}</p>
-                    </LinkMobile>
+                    <div className="hidden">
+                      <LinkMobile
+                        href="/blog"
+                        inView={false}
+                      >
+                        <p>{t("blog")}</p>
+                      </LinkMobile>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -99,12 +101,12 @@ function LinkMobile({
 }: {
   children: JSX.Element[] | JSX.Element;
   inView: boolean
-  href : string
+  href: string
 }) {
 
   return (
     <a
-    href={href}
+      href={href}
       className={`capitalize text-2xl font-semibold ${inView ? 'text-accent-400' : 'text-secondary'}`}
     >
       {children}
