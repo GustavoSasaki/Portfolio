@@ -15,7 +15,7 @@ export function HeadBox() {
       <title>{title}</title>
       <meta
         name="keywords"
-        content="portfolio gustavo sasaki roncaglia javascript node java react"
+        content="portfolio gustavo sasaki roncaglia javascript node react"
       />
       <meta name="description" content={headDescription} />
       <meta name="author" content="Gustavo Sasaki Roncaglia" />

@@ -15,7 +15,7 @@
   "amdocs": {
     "title": "Fullstack Developer Amdocs",
     "introduction": "While at Amdocs, I participated as a full-stack developer in the development of a web tool for creating telephony packages for Oi Company.",
-    "main-task": "I contributed to the improvement of the Spring Boot Java server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
+    "main-task": "I contributed to the improvement of the Node server, managed the OracleSQL database, and created new pages using HTML/jQuery.",
     "other-tasks": "Additionally, I developed a bash tool for converting Git commits to ClearCase, greatly enhancing the speed of building new releases.",
     "view-button": "View it Here"
   },

@@ -8,12 +8,13 @@ import {
   DiNodejsSmall,
   DiPostgresql,
 } from "react-icons/di";
-import { DiTerminal, DiGit, DiJava } from "react-icons/di";
+import { DiTerminal, DiGit, DiRedis } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
 import { BiLogoTailwindCss, BiLogoSpringBoot } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { SiLua } from "react-icons/si";
 
 export function Technologies() {
   const { t } = useTranslation("common");
@@ -89,12 +90,12 @@ const technologies: Tech[] = [
     icon: <DiTerminal />,
   },
   {
-    name: "Java",
-    icon: <DiJava />,
+    name: "Redis",
+    icon: <DiRedis />,
   },
   {
-    name: "Spring",
-    icon: <BiLogoSpringBoot />,
+    name: "Lua",
+    icon: <SiLua />,
   },
   {
     name: "Git",

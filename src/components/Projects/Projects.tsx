@@ -72,7 +72,7 @@ const getProjects = (t: TFunction) => {
       img: "https://ngchltiyfhxkbpitthto.supabase.co/storage/v1/object/public/portfolio/amdocs.jpg",
       title: t("amdocs.title"),
       stack: [
-        "Java",
+        "Node",
         "Spring",
         "jQuery",
         "OracleSQL",

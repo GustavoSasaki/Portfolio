@@ -15,7 +15,7 @@
   "amdocs": {
     "title": "Desenvolvedor Fullstack Amdocs",
     "introduction": "Durante meu tempo na Amdocs, participei como desenvolvedor full-stack no desenvolvimento de uma ferramenta web para a criação de pacotes de telefonia para a empresa Oi.",
-    "main-task": "Contribuí para a melhoria do servidor Java Spring Boot, gerenciei o banco de dados OracleSQL e criei novas páginas utilizando HTML/jQuery.",
+    "main-task": "Contribuí para a melhoria do servidor Node, gerenciei o banco de dados OracleSQL e criei novas páginas utilizando HTML/jQuery.",
     "other-tasks": "Além disso, desenvolvi uma ferramenta bash para converter commits do Git para o ClearCase, o que aumentou significativamente a velocidade do build de novas releases.",
     "view-button": "Entre no site"
   },

@@ -11,18 +11,6 @@ import Projects from "@/components/Projects/Projects";
 import localFont from "@next/font/local";
 import Hero from "@/components/Hero/Hero";
 
-//to-do:
-//use better photo
-//create detail project page
-// tomodachi
-// add header photo to article and article list
-// make gamhongo go live again
-// get amazon cloud practioner * 2 quotas
-// maybe get one for java
-// finish minecraft * 1 quotas
-// api capibaras * 3 quotas
-// add tags to article
-//19 quotas
 const inter = Inter({ subsets: ["latin"] });
 export const japFont = localFont({
   src: "../util/NotoSansJP-VariableFont_wght.ttf",

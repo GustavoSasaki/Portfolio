@@ -1,4 +1,4 @@
-import { DiJava } from "react-icons/di";
+import { DiRedis } from "react-icons/di";
 import { DiNodejsSmall } from "react-icons/di";
 import { DiPostgresql } from "react-icons/di";
 import { DiReact } from "react-icons/di";
@@ -18,7 +18,7 @@ export function MainStack() {
         <div className="flex justify-around items-center">
           <DiReact className={className} />
           <DiNodejsSmall className={className} />
-          <DiJava className={className} />
+          <DiRedis className={className} />
           <DiPostgresql className={className} />
         </div>
       </div>
